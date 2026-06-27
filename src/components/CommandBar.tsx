@@ -1,32 +1,35 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface CommandBarProps {
   onCommand: (cmd: string) => void;
 }
 
 const COMMANDS = [
-  { cmd: '/start', label: 'البداية' },
-  { cmd: '/menu', label: 'القائمة' },
-  { cmd: '/signals', label: 'الإشارات' },
-  { cmd: '/analysis', label: 'التحليلات' },
-  { cmd: '/portfolio', label: 'المحفظة' },
-  { cmd: '/risk', label: 'المخاطر' },
-  { cmd: '/calendar', label: 'التقويم' },
-  { cmd: '/learn', label: 'التعليم' },
-  { cmd: '/social', label: 'الاجتماعي' },
-  { cmd: '/subscribe', label: 'الاشتراك' },
-  { cmd: '/settings', label: 'الإعدادات' },
-  { cmd: '/refer', label: 'الإحالة' },
-  { cmd: '/support', label: 'الدعم' },
-  { cmd: '/news', label: 'الأخبار' },
-  { cmd: '/status', label: 'الحالة' },
-  { cmd: '/connect', label: 'ربط المنصات' },
-  { cmd: '/help', label: 'المساعدة' },
+  { cmd: '/start', label: 'البداية', icon: '🚀' },
+  { cmd: '/menu', label: 'القائمة الرئيسية', icon: '🏠' },
+  { cmd: '/signals', label: 'الإشارات الحية', icon: '📡' },
+  { cmd: '/analysis', label: 'التحليلات اليومية', icon: '☀️' },
+  { cmd: '/portfolio', label: 'لوحة التحكم', icon: '📊' },
+  { cmd: '/risk', label: 'إدارة المخاطر', icon: '🛡️' },
+  { cmd: '/calendar', label: 'التقويم الاقتصادي', icon: '📅' },
+  { cmd: '/learn', label: 'الأكاديمية التعليمية', icon: '🎓' },
+  { cmd: '/social', label: 'التداول الاجتماعي', icon: '👥' },
+  { cmd: '/subscribe', label: 'خطط الاشتراك', icon: '💎' },
+  { cmd: '/settings', label: 'الإعدادات', icon: '⚙️' },
+  { cmd: '/refer', label: 'برنامج الإحالة', icon: '🎁' },
+  { cmd: '/support', label: 'الدعم الفني', icon: '🆘' },
+  { cmd: '/news', label: 'آخر الأخبار', icon: '📰' },
+  { cmd: '/status', label: 'حالة حسابك', icon: '👤' },
+  { cmd: '/connect', label: 'ربط منصات التداول', icon: '🔗' },
+  { cmd: '/calc', label: 'حاسبة الصفقات', icon: '🧮' },
+  { cmd: '/help', label: 'دليل الاستخدام', icon: '📖' },
 ];
 
 export default function CommandBar({ onCommand }: CommandBarProps) {
   const [showCommands, setShowCommands] = useState(false);
   const [input, setInput] = useState('');
+  const popupRef = useRef<HTMLDivElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
 
   const handleSend = () => {
     if (input.trim()) {
@@ -38,72 +41,111 @@ export default function CommandBar({ onCommand }: CommandBarProps) {
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') handleSend();
+    if (e.key === 'Escape') setShowCommands(false);
   };
 
-  const filteredCommands = COMMANDS.filter(c =>
-    c.cmd.includes(input.toLowerCase()) || c.label.includes(input)
-  );
+  const filteredCommands = input.startsWith('/')
+    ? COMMANDS.filter(c =>
+        c.cmd.includes(input.toLowerCase()) || c.label.includes(input)
+      )
+    : COMMANDS;
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        popupRef.current && !popupRef.current.contains(e.target as Node) &&
+        menuBtnRef.current && !menuBtnRef.current.contains(e.target as Node)
+      ) {
+        setShowCommands(false);
+      }
+    };
+    if (showCommands) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showCommands]);
 
   return (
     <div className="relative border-t border-tg-divider bg-tg-header flex-shrink-0">
-      {/* Command suggestions */}
-      {showCommands && input.startsWith('/') && (
-        <div className="absolute bottom-full w-full bg-tg-bg border border-tg-divider rounded-t-xl max-h-48 overflow-y-auto z-10">
-          {filteredCommands.map(({ cmd, label }) => (
-            <button
-              key={cmd}
-              onClick={() => { onCommand(cmd); setInput(''); setShowCommands(false); }}
-              className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-tg-bubble transition-colors text-right"
-            >
-              <span className="text-tg-accent font-mono text-sm">{cmd}</span>
-              <span className="text-tg-subtext text-xs">{label}</span>
-            </button>
-          ))}
+      {/* Commands popup — Telegram bot menu style */}
+      {showCommands && (
+        <div
+          ref={popupRef}
+          className="absolute bottom-full left-0 right-0 bg-tg-bg border border-tg-divider rounded-t-2xl shadow-2xl overflow-hidden z-20"
+        >
+          {/* Popup header */}
+          <div className="flex items-center justify-between px-4 py-3 border-b border-tg-divider bg-tg-header">
+            <span className="text-tg-subtext text-xs font-medium">أوامر البوت</span>
+            <span className="text-tg-accent font-semibold text-sm">APEX Bot</span>
+          </div>
+
+          {/* Commands list */}
+          <div className="max-h-64 overflow-y-auto">
+            {filteredCommands.map(({ cmd, label, icon }) => (
+              <button
+                key={cmd}
+                onMouseDown={() => {
+                  onCommand(cmd);
+                  setInput('');
+                  setShowCommands(false);
+                }}
+                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-tg-bubble transition-colors text-right border-b border-tg-divider/40 last:border-0"
+              >
+                <span className="text-base w-7 text-center flex-shrink-0">{icon}</span>
+                <div className="flex flex-col flex-1 text-right">
+                  <span className="text-tg-accent font-mono text-sm font-medium">{cmd}</span>
+                  <span className="text-tg-subtext text-xs mt-0.5">{label}</span>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
       <div className="flex items-center gap-2 px-3 py-2">
-        {/* Attachment icon */}
-        <button className="text-tg-subtext hover:text-tg-accent transition-colors p-1.5 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        {/* Blue Telegram-style Menu Button */}
+        <button
+          ref={menuBtnRef}
+          onClick={() => setShowCommands(prev => !prev)}
+          title="أوامر البوت"
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl flex-shrink-0 transition-all ${
+            showCommands
+              ? 'bg-tg-accent text-white shadow-md'
+              : 'bg-tg-accent/90 hover:bg-tg-accent text-white'
+          }`}
+        >
+          {/* Hamburger / menu icon */}
+          <svg width="15" height="12" viewBox="0 0 15 12" fill="none">
+            <rect x="0" y="0" width="15" height="2" rx="1" fill="currentColor"/>
+            <rect x="0" y="5" width="15" height="2" rx="1" fill="currentColor"/>
+            <rect x="0" y="10" width="15" height="2" rx="1" fill="currentColor"/>
           </svg>
+          <span className="text-xs font-medium leading-none hidden sm:inline">قائمة</span>
         </button>
 
         {/* Input */}
         <div className="flex-1 relative">
           <input
             value={input}
-            onChange={e => { setInput(e.target.value); setShowCommands(true); }}
+            onChange={e => {
+              setInput(e.target.value);
+              if (e.target.value.startsWith('/')) setShowCommands(true);
+            }}
             onKeyDown={handleKeyDown}
-            onFocus={() => setShowCommands(true)}
-            onBlur={() => setTimeout(() => setShowCommands(false), 200)}
-            placeholder="اكتب أمراً أو رسالة... مثل /start"
+            placeholder="اكتب أمراً أو رسالة..."
+            dir="auto"
             className="w-full bg-tg-bubble text-tg-text text-sm placeholder-tg-subtext rounded-2xl px-4 py-2.5 outline-none border border-transparent focus:border-tg-accent/30 transition-all"
           />
         </div>
 
-        {/* Emoji */}
-        <button className="text-tg-subtext hover:text-tg-accent transition-colors p-1.5 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            <circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
-          </svg>
-        </button>
-
-        {/* Send / Mic */}
-        {input.trim() ? (
+        {/* Send button — only shown when there's text */}
+        {input.trim() && (
           <button
             onClick={handleSend}
             className="bg-tg-accent hover:bg-tg-accentLight text-white rounded-full w-9 h-9 flex items-center justify-center flex-shrink-0 transition-colors shadow-md"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-            </svg>
-          </button>
-        ) : (
-          <button className="text-tg-subtext hover:text-tg-accent transition-colors p-1.5 flex-shrink-0">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
             </svg>
           </button>
         )}
