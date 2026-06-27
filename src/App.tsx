@@ -282,7 +282,7 @@ export default function App() {
       '/news': 'news',
       '/connect': 'connect_platforms',
       '/export': 'export_data',
-      '/help': 'faq',
+      '/help': 'help',
     };
 
     if (cmd.startsWith('/')) {
@@ -299,7 +299,7 @@ export default function App() {
             text: `❓ لم أفهم هذا الأمر.
 
 اكتب **/help** لرؤية قائمة جميع الأوامر المتاحة، أو اكتب سؤالك مباشرة وسيرد عليك المساعد الذكي.`,
-            buttons: [[{ label: '📖 /help — الأوامر المتاحة', action: 'goto:faq' }]],
+            buttons: [[{ label: '📖 /help — الأوامر المتاحة', action: 'goto:help' }]],
             timestamp: new Date(),
           }]);
           setActiveMessageId(msgId);

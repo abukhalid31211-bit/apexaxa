@@ -81,7 +81,19 @@ export type Screen =
   | 'trial_ended'
   | 'limited_plan'
   | 'upgrade_required'
-  | 'status';
+  | 'status'
+  | 'why_subscribe'
+  | 'cancel_subscription_confirm'
+  | 'error_screen'
+  | 'maintenance'
+  | 'suspended'
+  | 'help'
+  | 'news_alert'
+  | 'calendar_alert'
+  | 'renewal_alert'
+  | 'target_alert'
+  | 'volatility_alert'
+  | 'payment_card';
 
 export interface Message {
   id: string;
