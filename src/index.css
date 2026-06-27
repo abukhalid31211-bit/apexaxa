@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0e1621;
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif;
+  direction: rtl;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #17212b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b5278;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5288c1;
+}
+
+/* Message animations */
+.message-enter {
+  animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typing dots */
+.typing-dot {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Telegram-like button press effect */
+.tg-button {
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.tg-button:active {
+  transform: scale(0.97);
+  filter: brightness(0.85);
+}
+
+/* Bold and italic text parsing */
+strong {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+  color: #9ab8d4;
+}
+
+/* Code text */
+code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(255,255,255,0.08);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+/* Selection */
+::selection {
+  background: rgba(82, 136, 193, 0.4);
+}
+
+/* Progress bars */
+.progress-bar {
+  transition: width 0.5s ease;
+}
+
+/* Green glow for success */
+.success-glow {
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Gold shimmer for premium */
+.gold-shimmer {
+  background: linear-gradient(135deg, #ffd700, #ffa000, #ffd700);
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
