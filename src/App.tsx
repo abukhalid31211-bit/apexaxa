@@ -133,6 +133,39 @@ export default function App() {
       setUserState(updated);
       navigate('step2_markets', updated);
     }
+    // Settings-context market toggles (navigate back to settings_markets)
+    else if (action.startsWith('stoggle_market:')) {
+      const market = action.replace('stoggle_market:', '');
+      const currentMarkets = userState.markets || [];
+      const newMarkets = currentMarkets.includes(market)
+        ? currentMarkets.filter(m => m !== market)
+        : [...currentMarkets, market];
+      const updated = { ...userState, markets: newMarkets };
+      setUserState(updated);
+      navigate('settings_markets', updated);
+    }
+    else if (action === 'select_all_markets_s') {
+      const updated = {
+        ...userState,
+        markets: ['كريبتو', 'فوركس', 'أسهم أمريكية', 'أسهم سعودية', 'سلع', 'مؤشرات', 'أسهم إماراتية']
+      };
+      setUserState(updated);
+      navigate('settings_markets', updated);
+    }
+    // Settings-context style update (navigate back to settings)
+    else if (action.startsWith('sset_style:')) {
+      const style = action.replace('sset_style:', '');
+      const updated = { ...userState, tradingStyle: style };
+      setUserState(updated);
+      navigate('settings', updated);
+    }
+    // Settings-context experience update (navigate back to settings)
+    else if (action.startsWith('sset_exp:')) {
+      const exp = action.replace('sset_exp:', '');
+      const updated = { ...userState, experience: exp };
+      setUserState(updated);
+      navigate('settings', updated);
+    }
     else if (action.startsWith('set_style:')) {
       const style = action.replace('set_style:', '');
       const updated = { ...userState, tradingStyle: style };

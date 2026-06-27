@@ -1142,12 +1142,14 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 اختر المستوى المناسب لك:`,
       buttons: [
         [{ label: '🌱 المستوى الأول — المبتدئ — 20 درساً', action: 'goto:academy_level1' }],
-        [{ label: '📈 المستوى الثاني — المتوسط — 25 درساً', action: 'goto:academy_level1' }],
-        [{ label: '🎯 المستوى الثالث — المتقدم — 20 درساً', action: 'goto:academy_level1' }],
-        [{ label: '🏆 المستوى الرابع — الخبير — 15 درساً', action: 'goto:academy_level1' }],
+        [{ label: '📈 المستوى الثاني — المتوسط — 25 درساً', action: 'goto:academy_level2' }],
+        [{ label: '🎯 المستوى الثالث — المتقدم — 20 درساً', action: 'goto:academy_level3' }],
+        [{ label: '🏆 المستوى الرابع — الخبير — 15 درساً', action: 'goto:academy_level4' }],
         [{ label: '📚 مكتبة الاستراتيجيات — 50+ استراتيجية', action: 'goto:strategy_library' }],
-        [{ label: '🎬 فيديوهات تعليمية', action: 'goto:academy_level1' }],
-        [{ label: '📝 اختبارات تقييم المستوى', action: 'goto:lesson_quiz' }],
+        [{ label: '🎬 فيديوهات تعليمية', action: 'goto:video_library' }],
+        [{ label: '📖 مسرد المصطلحات', action: 'goto:glossary' }],
+        [{ label: '⭐ استراتيجياتي المفضلة', action: 'goto:favorite_strategies' }],
+        [{ label: '📝 اختبارات تقييم المستوى', action: 'goto:level_assessment' }],
         [{ label: '🏠 رجوع للقائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1294,12 +1296,14 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 • مناقشات نشطة: **23**
 • دول مُمَثَّلة: **87 دولة**`,
       buttons: [
-        [{ label: '📊 التصنيف الكامل', action: 'goto:competitions' }],
+        [{ label: '🏆 قائمة الصدارة الكاملة', action: 'goto:leaderboard' }],
+        [{ label: '🔄 نسخ صفقات الخبراء', action: 'goto:copy_trading' }],
         [{ label: '💬 غرف النقاش', action: 'goto:discussion_rooms' }],
         [{ label: '👤 ملف TraderAli', action: 'goto:trader_profile' }],
-        [{ label: '📡 إشارات المجتمع', action: 'goto:signals_live' }],
-        [{ label: '📤 شارك إشاراتك', action: 'goto:discussion_rooms' }],
-        [{ label: '👤 ملفي الشخصي', action: 'goto:status' }],
+        [{ label: '📡 إشارات المجتمع', action: 'goto:community_signals' }],
+        [{ label: '📤 شارك إشاراتي الناجحة', action: 'goto:share_signals' }],
+        [{ label: '👥 المتداولون الذين أتابعهم', action: 'goto:following_list' }],
+        [{ label: '👤 ملفي الشخصي العام', action: 'goto:my_public_profile' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1475,13 +1479,14 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 ━━━━━━━━━━━━━━━━━━━━━━━━
 اختر طريقة الدفع:`,
       buttons: [
-        [{ label: '💳 بطاقة ائتمان — Visa/Mastercard/Amex', action: 'goto:payment_success' }],
+        [{ label: '💳 بطاقة ائتمان — Visa/Mastercard/Amex', action: 'goto:payment_card' }],
         [{ label: '🪙 عملات رقمية — BTC/ETH/USDT/BNB', action: 'goto:payment_crypto' }],
-        [{ label: '💙 PayPal', action: 'goto:payment_success' }],
+        [{ label: '💙 PayPal', action: 'goto:payment_paypal' }],
         [{ label: '🍎 Apple Pay', action: 'goto:payment_success' }],
         [{ label: 'G Google Pay', action: 'goto:payment_success' }],
-        [{ label: '⭐ Telegram Stars', action: 'goto:payment_success' }],
-        [{ label: '🏦 تحويل بنكي — Wire Transfer', action: 'goto:payment_success' }],
+        [{ label: '⭐ Telegram Stars', action: 'goto:payment_stars' }],
+        [{ label: '🏦 تحويل بنكي — Wire Transfer', action: 'goto:payment_bank' }],
+        [{ label: '🎁 استخدام رصيد الإحالة ($45)', action: 'goto:payment_referral_balance' }],
         [{ label: '🔙 العودة لخطط الاشتراك', action: 'goto:subscription_plans' }],
       ]
     },
@@ -1561,13 +1566,15 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
       buttons: [
         [{ label: '🌍 اللغة الحالية: العربية — اضغط للتغيير', action: 'goto:language' }],
         [{ label: '🕐 المنطقة الزمنية: GMT+3 — اضغط للتغيير', action: 'goto:step4_timezone' }],
-        [{ label: '🏪 الأسواق المفضلة: كريبتو + فوركس', action: 'goto:step2_markets' }],
-        [{ label: '📈 أسلوب التداول: يومي — اضغط للتغيير', action: 'goto:step3_style' }],
+        [{ label: '🏪 الأسواق المفضلة', action: 'goto:settings_markets' }],
+        [{ label: '📈 أسلوب التداول', action: 'goto:settings_style' }],
+        [{ label: '🎯 مستوى الخبرة', action: 'goto:settings_level' }],
         [{ label: '🔔 إعدادات التنبيهات', action: 'goto:notification_settings' }],
         [{ label: '🛡️ إعدادات إدارة المخاطر', action: 'goto:risk_settings' }],
         [{ label: '💎 إدارة الاشتراك', action: 'goto:manage_subscription' }],
         [{ label: '🔗 ربط منصات التداول', action: 'goto:connect_platforms' }],
         [{ label: '🌙 أوقات عدم الإزعاج', action: 'goto:dnd_settings' }],
+        [{ label: '🔐 الخصوصية والأمان', action: 'goto:settings_privacy' }],
         [{ label: '📥 تصدير البيانات والتقارير', action: 'goto:export_data' }],
         [{ label: '🗑️ حذف الحساب', action: 'goto:delete_account' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
@@ -1677,9 +1684,13 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
 • يؤثر على: **جميع الأسواق بشكل عنيف**
 • 💡 أغلق الصفقات المفتوحة أو ضيّق وقف الخسارة قبل 30 دقيقة`,
       buttons: [
-        [{ label: '⬅️ أمس', action: 'goto:economic_calendar' }, { label: '📅 اليوم', action: 'goto:economic_calendar' }, { label: '➡️ غداً', action: 'goto:economic_calendar' }],
+        [{ label: '📅 أحداث اليوم مفصّلة', action: 'goto:calendar_today' }],
+        [{ label: '⬅️ أمس', action: 'goto:calendar_today' }, { label: '📅 اليوم', action: 'goto:calendar_today' }, { label: '➡️ غداً', action: 'goto:calendar_today' }],
         [{ label: '📊 عرض الأسبوع كاملاً', action: 'goto:weekly_calendar' }],
-        [{ label: '🔔 تنبيهي قبل كل حدث بـ 15 دقيقة', action: 'goto:notification_settings' }],
+        [{ label: '📆 التقويم الشهري', action: 'goto:monthly_calendar' }],
+        [{ label: '🔍 فلترة حسب الدولة', action: 'goto:calendar_filter_country' }],
+        [{ label: '⭐ فلترة حسب التأثير', action: 'goto:calendar_filter_impact' }],
+        [{ label: '🔔 إعداد التنبيهات', action: 'goto:calendar_alerts_setup' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1912,15 +1923,15 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
 ✅ يمكنك إلغاء الربط في أي وقت`,
       buttons: [
         [{ label: '🔶 Binance — ربط API', action: 'goto:connect_binance' }],
-        [{ label: '🟡 Bybit — ربط API', action: 'goto:connect_binance' }],
-        [{ label: '🔵 OKX — ربط API', action: 'goto:connect_binance' }],
-        [{ label: '🟠 KuCoin — ربط API', action: 'goto:connect_binance' }],
-        [{ label: '📊 MetaTrader 4 — ربط', action: 'goto:connect_binance' }],
-        [{ label: '📊 MetaTrader 5 — ربط', action: 'goto:connect_binance' }],
-        [{ label: '🔵 Coinbase Pro — ربط API', action: 'goto:connect_binance' }],
-        [{ label: '📈 TradingView — ربط التنبيهات', action: 'goto:connect_binance' }],
-        [{ label: '🏦 Interactive Brokers — ربط', action: 'goto:connect_binance' }],
-        [{ label: '🔧 طلب دعم منصة أخرى', action: 'goto:support' }],
+        [{ label: '🟢 Bybit — ربط API', action: 'goto:connect_bybit' }],
+        [{ label: '🔵 OKX — ربط API', action: 'goto:connect_okx' }],
+        [{ label: '🟠 Coinbase Advanced — ربط', action: 'goto:connect_coinbase' }],
+        [{ label: '🔶 KuCoin — ربط API', action: 'goto:connect_kucoin' }],
+        [{ label: '📊 MetaTrader 4 — ربط EA', action: 'goto:connect_mt4' }],
+        [{ label: '📊 MetaTrader 5 — ربط EA', action: 'goto:connect_mt5' }],
+        [{ label: '📈 Interactive Brokers — ربط', action: 'goto:connect_ib' }],
+        [{ label: '📈 TradingView — ربط Webhook', action: 'goto:connect_tradingview' }],
+        [{ label: '➕ طلب إضافة منصة أخرى', action: 'goto:connect_request' }],
         [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
       ]
     },
@@ -2016,9 +2027,14 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
 ...
 📍 أنت — +18.7% — ارتفعت 12 مرتبة ⬆️`,
       buttons: [
-        [{ label: '📊 القائمة الكاملة', action: 'goto:competitions' }],
+        [{ label: '🏆 مسابقة الشهر الحالي', action: 'goto:competition_current' }],
+        [{ label: '📊 قائمة الصدارة الكاملة', action: 'goto:leaderboard' }],
         [{ label: '🎯 التحديات الأسبوعية', action: 'goto:weekly_challenges' }],
-        [{ label: '❓ قواعد المسابقة', action: 'goto:competitions' }],
+        [{ label: '📋 قواعد المسابقة', action: 'goto:competition_rules' }],
+        [{ label: '🎁 الجوائز والمكافآت', action: 'goto:competition_prizes' }],
+        [{ label: '📊 تصنيفي الحالي', action: 'goto:my_competition_rank' }],
+        [{ label: '🏅 جوائزي المحققة', action: 'goto:my_rewards' }],
+        [{ label: '🗂️ أرشيف المسابقات السابقة', action: 'goto:competition_archive' }],
         [{ label: '💡 كيف أحسّن تصنيفي؟', action: 'goto:academy' }],
         [{ label: '🏠 رجوع للقائمة الرئيسية', action: 'goto:main_menu' }],
       ]
@@ -2639,6 +2655,1220 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
       buttons: [
         [{ label: '🤖 المساعد الذكي', action: 'goto:ai_assistant' }],
         [{ label: '🆘 مركز الدعم', action: 'goto:support' }],
+        [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
+      ]
+    },
+
+    // ─── التقويم الاقتصادي ────────────────────────────────────────
+    calendar_today: {
+      id: 'calendar_today',
+      text: `📅 **أحداث اليوم — التقويم الاقتصادي**
+
+${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**⭐⭐⭐⭐⭐ عالٍ جداً:**
+🔴 **14:30** — مبيعات التجزئة الأمريكية 🇺🇸
+  التوقع: **0.3%** | السابق: **0.1%**
+
+**⭐⭐⭐⭐ عالٍ:**
+🟠 **16:00** — ثقة المستهلك الأمريكي 🇺🇸
+  التوقع: **103.2** | السابق: **101.8**
+🟠 **18:30** — مخزونات النفط الأمريكية 🇺🇸
+
+**⭐⭐⭐ متوسط:**
+🟡 **10:00** — مؤشر أسعار المنتجين الأوروبي 🇪🇺
+🟡 **12:00** — قرار الفائدة البريطانية 🇬🇧
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**إجمالي أحداث اليوم:** 5 أحداث (1 عالٍ جداً، 2 عالٍ، 2 متوسط)`,
+      buttons: [
+        [{ label: '📊 تحليل مبيعات التجزئة', action: 'goto:calendar_event_detail' }],
+        [{ label: '📊 تحليل ثقة المستهلك', action: 'goto:calendar_event_detail' }],
+        [{ label: '📊 قرار الفائدة البريطانية', action: 'goto:calendar_event_detail' }],
+        [{ label: '⬅️ أمس', action: 'goto:calendar_today' }, { label: '➡️ غداً', action: 'goto:calendar_today' }],
+        [{ label: '🔙 رجوع للتقويم', action: 'goto:economic_calendar' }],
+      ]
+    },
+
+    calendar_event_detail: {
+      id: 'calendar_event_detail',
+      text: `📊 **تحليل الحدث — مبيعات التجزئة الأمريكية**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🇺🇸 **Core Retail Sales MoM**
+⭐⭐⭐⭐⭐ *بالغ الأهمية*
+🕑 الصدور: **14:30 GMT** (بعد 2 ساعة و15 دقيقة)
+
+**التوقعات:**
+• التوقع: **0.3%** | السابق: **0.1%** | المراجَع: **0.2%**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**التأثير المتوقع على الأسواق:**
+
+💵 **الدولار الأمريكي USD:**
+  • أعلى من التوقع → صعود قوي
+  • أقل من التوقع → هبوط حاد
+
+🏦 **الذهب XAU/USD:**
+  • أعلى من التوقع → هبوط
+  • أقل من التوقع → صعود
+
+₿ **البيتكوين BTC:**
+  • تأثير غير مباشر — يتبع الدولار عكسياً
+
+📈 **الأسهم الأمريكية:**
+  • أعلى من التوقع → صعود
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **توصية APEX:**
+أغلق صفقات الفوركس المفتوحة إذا كانت قريبة من وقف الخسارة. انتظر 15 دقيقة بعد الصدور قبل الدخول في صفقات جديدة.`,
+      buttons: [
+        [{ label: '🔔 تنبيه قبل 15 دقيقة', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🔔 تنبيه قبل 30 دقيقة', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🔔 تنبيه عند الصدور', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '✅ حفظ التنبيهات', action: 'goto:calendar_today' }],
+        [{ label: '🔙 رجوع للتقويم', action: 'goto:calendar_today' }],
+      ]
+    },
+
+    calendar_filter_country: {
+      id: 'calendar_filter_country',
+      text: `🔍 **فلترة التقويم حسب الدولة**
+
+اختر الدولة لعرض أحداثها فقط:`,
+      buttons: [
+        [{ label: '🇺🇸 أمريكا فقط', action: 'goto:calendar_today' }, { label: '🇪🇺 أوروبا فقط', action: 'goto:calendar_today' }],
+        [{ label: '🇬🇧 بريطانيا فقط', action: 'goto:calendar_today' }, { label: '🇯🇵 اليابان فقط', action: 'goto:calendar_today' }],
+        [{ label: '🇸🇦 السعودية فقط', action: 'goto:calendar_today' }, { label: '🇨🇳 الصين فقط', action: 'goto:calendar_today' }],
+        [{ label: '🇦🇺 أستراليا فقط', action: 'goto:calendar_today' }, { label: '🇨🇦 كندا فقط', action: 'goto:calendar_today' }],
+        [{ label: '🇨🇭 سويسرا فقط', action: 'goto:calendar_today' }, { label: '🌍 كل الدول', action: 'goto:calendar_today' }],
+        [{ label: '✅ تطبيق الفلتر', action: 'goto:calendar_today' }],
+        [{ label: '🔙 رجوع', action: 'goto:economic_calendar' }],
+      ]
+    },
+
+    calendar_filter_impact: {
+      id: 'calendar_filter_impact',
+      text: `⭐ **فلترة التقويم حسب التأثير**
+
+اختر مستوى التأثير لعرضه:`,
+      buttons: [
+        [{ label: '⭐⭐⭐⭐⭐ عالٍ جداً فقط', action: 'goto:calendar_today' }],
+        [{ label: '⭐⭐⭐⭐ عالٍ فقط', action: 'goto:calendar_today' }],
+        [{ label: '⭐⭐⭐ متوسط فأعلى', action: 'goto:calendar_today' }],
+        [{ label: '📋 الكل', action: 'goto:calendar_today' }],
+        [{ label: '✅ تطبيق الفلتر', action: 'goto:calendar_today' }],
+        [{ label: '🔙 رجوع', action: 'goto:economic_calendar' }],
+      ]
+    },
+
+    calendar_alerts_setup: {
+      id: 'calendar_alerts_setup',
+      text: `🔔 **إعداد تنبيهات التقويم الاقتصادي**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**التنبيهات الحالية:**
+
+🟢 تنبيه كل الأحداث عالية التأثير — **مفعّل**
+🟢 تنبيه 15 دقيقة قبل كل حدث — **مفعّل**
+🔴 تنبيه 30 دقيقة قبل كل حدث — **معطّل**
+🟢 تنبيه فوري بعد صدور النتائج — **مفعّل**
+🔴 تنبيه الأحداث متوسطة التأثير — **معطّل**
+🔴 تنبيه الأحداث منخفضة التأثير — **معطّل**
+
+اضغط على أي تنبيه لتفعيله أو تعطيله:`,
+      buttons: [
+        [{ label: '🟢 الأحداث عالية التأثير (مفعّل)', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🟢 تنبيه 15 دقيقة قبل (مفعّل)', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🔴 تنبيه 30 دقيقة قبل (معطّل)', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🟢 تنبيه فوري عند الصدور (مفعّل)', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🔴 الأحداث متوسطة التأثير (معطّل)', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '✅ حفظ إعدادات التنبيهات', action: 'goto:economic_calendar' }],
+        [{ label: '🔙 رجوع', action: 'goto:economic_calendar' }],
+      ]
+    },
+
+    monthly_calendar: {
+      id: 'monthly_calendar',
+      text: `📅 **التقويم الشهري — ${new Date().toLocaleDateString('ar-SA', { month: 'long', year: 'numeric' })}**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**أبرز الأحداث هذا الشهر:**
+
+**الأسبوع الأول:**
+🔴 2 يوليو — قرار الفائدة الأمريكية ⭐⭐⭐⭐⭐
+🟠 4 يوليو — الناتج المحلي الأوروبي ⭐⭐⭐⭐
+
+**الأسبوع الثاني:**
+🔴 9 يوليو — بيانات التضخم الأمريكي CPI ⭐⭐⭐⭐⭐
+🟠 11 يوليو — اجتماع البنك الأوروبي ⭐⭐⭐⭐
+
+**الأسبوع الثالث:**
+🔴 16 يوليو — مبيعات التجزئة الأمريكية ⭐⭐⭐⭐⭐
+🟠 18 يوليو — ثقة المستهلك ⭐⭐⭐
+
+**الأسبوع الرابع:**
+🔴 23 يوليو — الناتج المحلي الأمريكي ⭐⭐⭐⭐⭐
+🟠 25 يوليو — قرار الفائدة اليابانية ⭐⭐⭐⭐
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**إجمالي الأحداث:** 47 (8 عالية جداً، 15 عالية، 24 متوسطة)`,
+      buttons: [
+        [{ label: '⬅️ الشهر الماضي', action: 'goto:monthly_calendar' }, { label: '➡️ الشهر القادم', action: 'goto:monthly_calendar' }],
+        [{ label: '🔔 تنبيهات الشهر', action: 'goto:calendar_alerts_setup' }],
+        [{ label: '🔙 رجوع للتقويم', action: 'goto:economic_calendar' }],
+      ]
+    },
+
+    // ─── التداول الاجتماعي ────────────────────────────────────────
+    leaderboard: {
+      id: 'leaderboard',
+      text: `🏆 **قائمة الصدارة — أفضل المتداولين**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**🥇 CryptoWolf** 🇺🇸 — **+67.3%** هذا الشهر
+  النجاح: 84% | إشارات: 52 | متابعون: 4,210
+
+**🥈 TraderAli** 🇸🇦 — **+52.1%**
+  النجاح: 79% | إشارات: 45 | متابعون: 2,340
+
+**🥉 MarketSniper** 🇬🇧 — **+48.9%**
+  النجاح: 81% | إشارات: 38 | متابعون: 1,890
+
+**4️⃣ ForexKing** 🇦🇪 — **+45.2%**
+  النجاح: 76% | إشارات: 41 | متابعون: 3,120
+
+**5️⃣ SwingPro** 🇩🇪 — **+41.8%**
+  النجاح: 77% | إشارات: 33 | متابعون: 1,450
+
+**6️⃣ GoldTrader** 🇸🇦 — **+38.6%**
+**7️⃣ CryptoQueen** 🇪🇬 — **+35.1%**
+**8️⃣ ScalpKing** 🇹🇷 — **+32.4%**
+**9️⃣ InvestorX** 🇰🇼 — **+29.7%**
+**🔟 AlphaSignals** 🇦🇪 — **+27.3%**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+📍 **مرتبتك:** 34 من 2,847 — **+18.7%**`,
+      buttons: [
+        [{ label: '📅 هذا الأسبوع', action: 'goto:leaderboard' }, { label: '📅 هذا الشهر', action: 'goto:leaderboard' }, { label: '📅 كل الوقت', action: 'goto:leaderboard' }],
+        [{ label: '₿ تصنيف الكريبتو', action: 'goto:leaderboard' }, { label: '💱 تصنيف الفوركس', action: 'goto:leaderboard' }],
+        [{ label: '👁️ ملف CryptoWolf', action: 'goto:trader_profile' }],
+        [{ label: '👁️ ملف TraderAli', action: 'goto:trader_profile' }],
+        [{ label: '⬅️ سابق', action: 'goto:leaderboard' }, { label: '➡️ تالٍ', action: 'goto:leaderboard' }],
+        [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
+      ]
+    },
+
+    copy_trading: {
+      id: 'copy_trading',
+      text: `🔄 **نسخ صفقات الخبراء — Copy Trading**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**أفضل الخبراء للنسخ:**
+
+**🥇 CryptoWolf** ⭐ موصى به
+  الربح: **+67.3%** | النجاح: **84%** | المخاطرة: متوسطة
+  المتابعون النشطون: 312 | نسخ تلقائي: ✅ متاح
+
+**🥈 TraderAli** ⭐ موصى به
+  الربح: **+52.1%** | النجاح: **79%** | المخاطرة: منخفضة
+  المتابعون النشطون: 189 | نسخ تلقائي: ✅ متاح
+
+**🥉 MarketSniper**
+  الربح: **+48.9%** | النجاح: **81%** | المخاطرة: متوسطة
+  المتابعون النشطون: 245 | نسخ تلقائي: ✅ متاح
+
+**4️⃣ GoldTrader**
+  الربح: **+38.6%** | النجاح: **76%** | المخاطرة: منخفضة
+  المتابعون النشطون: 178 | نسخ تلقائي: ✅ متاح
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+📊 **صفقاتي المنسوخة الآن:** 3 صفقات نشطة`,
+      buttons: [
+        [{ label: '✅ نسخ CryptoWolf تلقائياً', action: 'goto:copy_settings' }],
+        [{ label: '✅ نسخ TraderAli تلقائياً', action: 'goto:copy_settings' }],
+        [{ label: '🔍 بحث عن خبير', action: 'goto:social_trading' }],
+        [{ label: '📊 صفقاتي المنسوخة الآن', action: 'goto:dashboard' }],
+        [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
+      ]
+    },
+
+    copy_settings: {
+      id: 'copy_settings',
+      text: `⚙️ **إعدادات النسخ — CryptoWolf**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**نسبة رأس المال للنسخ:**
+
+اختر كم تخصص من رأس مالك لنسخ صفقات هذا الخبير:`,
+      buttons: [
+        [{ label: '10% من رأس المال', action: 'goto:copy_trading' }, { label: '25% من رأس المال', action: 'goto:copy_trading' }],
+        [{ label: '50% من رأس المال', action: 'goto:copy_trading' }, { label: '✏️ نسبة مخصصة', action: 'goto:copy_trading' }],
+        [{ label: '⚡ الرافعة: نفس رافعة الخبير', action: 'goto:copy_settings' }],
+        [{ label: '⚡ الرافعة: 1x', action: 'goto:copy_settings' }, { label: '⚡ الرافعة: 3x', action: 'goto:copy_settings' }],
+        [{ label: '🛑 حد الخسارة اليومي للنسخ: 5%', action: 'goto:copy_settings' }],
+        [{ label: '✅ حفظ إعدادات النسخ وتفعيله', action: 'goto:copy_trading', color: 'green' }],
+        [{ label: '🔕 إيقاف النسخ التلقائي', action: 'goto:copy_trading' }],
+        [{ label: '🔙 رجوع', action: 'goto:copy_trading' }],
+      ]
+    },
+
+    community_signals: {
+      id: 'community_signals',
+      text: `📊 **إشارات المجتمع**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**🔥 أحدث الإشارات (156 إشارة اليوم):**
+
+**📡 TraderAli** ✅ — BTC/USDT شراء
+  الهدف: $72,500 | وقف الخسارة: $65,800 | الجودة: **91%**
+  👍 234 | 💬 45 | ✅ 189 دخلوا الصفقة
+
+**📡 CryptoWolf** ✅ — ETH/USDT شراء
+  الهدف: $3,800 | وقف الخسارة: $3,100 | الجودة: **87%**
+  👍 178 | 💬 32 | ✅ 145 دخلوا الصفقة
+
+**📡 GoldTrader** ✅ — XAU/USD شراء
+  الهدف: $2,450 | وقف الخسارة: $2,320 | الجودة: **89%**
+  👍 156 | 💬 28 | ✅ 134 دخلوا الصفقة
+
+**📡 ForexKing** ✅ — EUR/USD بيع
+  الهدف: 1.0650 | وقف الخسارة: 1.0820 | الجودة: **82%**
+  👍 98 | 💬 19 | ✅ 87 دخلوا الصفقة`,
+      buttons: [
+        [{ label: '🔥 الكل', action: 'goto:community_signals' }, { label: '⭐ الأعلى تقييماً', action: 'goto:community_signals' }, { label: '📅 الأحدث', action: 'goto:community_signals' }],
+        [{ label: '₿ كريبتو فقط', action: 'goto:community_signals' }, { label: '💱 فوركس فقط', action: 'goto:community_signals' }],
+        [{ label: '👍 إعجاب', action: 'goto:community_signals' }, { label: '💬 تعليق', action: 'goto:community_signals' }, { label: '✅ دخلت الصفقة', action: 'goto:signal_entered' }],
+        [{ label: '⬅️ سابق', action: 'goto:community_signals' }, { label: '➡️ تالٍ', action: 'goto:community_signals' }],
+        [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
+      ]
+    },
+
+    my_public_profile: {
+      id: 'my_public_profile',
+      text: `👤 **ملفي الشخصي العام**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**@${userState?.username || 'trader_apex'}**
+
+📊 **إحصائياتي:**
+• الإشارات المشاركة: **23**
+• نسبة النجاح: **74.3%**
+• إجمالي الربح: **+31.2%** هذا الشهر
+• المتابعون: **12**
+
+🔒 **خصوصية الأداء:** مخفي عن الآخرين
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**رابط ملفك الشخصي:**
+\`https://t.me/ApexTradingBot?profile=trader_apex\``,
+      buttons: [
+        [{ label: '✏️ تعديل الاسم المعروض', action: 'goto:my_public_profile' }],
+        [{ label: '🖼️ تغيير الصورة الرمزية', action: 'goto:my_public_profile' }],
+        [{ label: '🔒 إخفاء أداء الصفقات', action: 'goto:my_public_profile' }, { label: '🔓 إظهار الأداء', action: 'goto:my_public_profile' }],
+        [{ label: '📋 نسخ رابط ملفي', action: 'copy_referral' }],
+        [{ label: '📱 مشاركة واتساب', action: 'goto:my_public_profile' }],
+        [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
+      ]
+    },
+
+    share_signals: {
+      id: 'share_signals',
+      text: `📤 **مشاركة إشاراتي الناجحة**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**إشاراتك الناجحة الأخيرة:**
+
+✅ **BTC/USDT** — شراء — **+5.26%** — قبل 3 أيام
+✅ **XAU/USD** — شراء — **+4.2%** — قبل 5 أيام
+✅ **ETH/USDT** — شراء — **+3.8%** — قبل أسبوع
+✅ **EUR/USD** — بيع — **+2.1%** — قبل أسبوع
+✅ **NVDA** — شراء — **+6.4%** — قبل أسبوعين
+
+اختر الإشارة التي تريد مشاركتها مع المجتمع:`,
+      buttons: [
+        [{ label: '📤 نشر BTC +5.26%', action: 'goto:community_signals' }],
+        [{ label: '📤 نشر XAU +4.2%', action: 'goto:community_signals' }],
+        [{ label: '📤 نشر ETH +3.8%', action: 'goto:community_signals' }],
+        [{ label: '📤 نشر EUR/USD +2.1%', action: 'goto:community_signals' }],
+        [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
+      ]
+    },
+
+    following_list: {
+      id: 'following_list',
+      text: `👥 **المتداولون الذين أتابعهم**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**قائمة متابعاتك (3 متداولين):**
+
+**1. TraderAli** 🇸🇦
+  الربح: +52.1% | النجاح: 79%
+  آخر إشارة: قبل 2 ساعة ✅
+
+**2. GoldTrader** 🇸🇦
+  الربح: +38.6% | النجاح: 76%
+  آخر إشارة: قبل 4 ساعات ✅
+
+**3. MarketSniper** 🇬🇧
+  الربح: +48.9% | النجاح: 81%
+  آخر إشارة: قبل 6 ساعات ✅`,
+      buttons: [
+        [{ label: '👁️ صفقات TraderAli', action: 'goto:trader_profile' }, { label: '➖ إلغاء متابعته', action: 'goto:following_list' }],
+        [{ label: '👁️ صفقات GoldTrader', action: 'goto:trader_profile' }, { label: '➖ إلغاء متابعته', action: 'goto:following_list' }],
+        [{ label: '👁️ صفقات MarketSniper', action: 'goto:trader_profile' }, { label: '➖ إلغاء متابعته', action: 'goto:following_list' }],
+        [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
+      ]
+    },
+
+    // ─── المسابقات ────────────────────────────────────────────────
+    competition_current: {
+      id: 'competition_current',
+      text: `🏆 **مسابقة يوليو 2025 — الشهر الحالي**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الجوائز:**
+🥇 المركز الأول: **$500 + شهر Diamond مجاني**
+🥈 المركز الثاني: **$250 + شهر Elite مجاني**
+🥉 المركز الثالث: **$100 + شهر Pro مجاني**
+4-10: **شهر Pro مجاني لكل منهم**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**قائمة الصدارة الحالية:**
+🥇 CryptoWolf — +67.3% 🇺🇸
+🥈 TraderAli — +52.1% 🇸🇦
+🥉 MarketSniper — +48.9% 🇬🇧
+4️⃣ ForexKing — +45.2% 🇦🇪
+5️⃣ SwingPro — +41.8% 🇩🇪
+...
+📍 **أنت — +18.7%** (المرتبة 34)
+
+⏰ **الوقت المتبقي:** 16 يوماً و 8 ساعات`,
+      buttons: [
+        [{ label: '📊 القائمة الكاملة للمتنافسين', action: 'goto:leaderboard' }],
+        [{ label: '📋 قواعد المسابقة', action: 'goto:competition_rules' }],
+        [{ label: '🎁 الجوائز والمكافآت', action: 'goto:competition_prizes' }],
+        [{ label: '📈 كيف أحسّن تصنيفي؟', action: 'goto:academy' }],
+        [{ label: '📊 تصنيفي الحالي', action: 'goto:my_competition_rank' }],
+        [{ label: '🔙 رجوع للمسابقات', action: 'goto:competitions' }],
+      ]
+    },
+
+    competition_rules: {
+      id: 'competition_rules',
+      text: `📋 **قواعد المسابقة الشهرية**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**1. طريقة الاحتساب:**
+• يُحتسب إجمالي نسبة الربح على جميع الصفقات المغلقة خلال الشهر
+• الصفقات الخاسرة تُخصم من النقاط
+• فقط الصفقات التي تم الدخول فيها باستخدام إشارات APEX تُحتسب
+
+**2. الأهلية:**
+• المشتركون في خطة Pro وما فوق فقط
+• الحد الأدنى: 5 صفقات مغلقة خلال الشهر
+• تسجيل المشاركة قبل اليوم الخامس من الشهر
+
+**3. الجوائز:**
+• تُوزّع الجوائز النقدية خلال 5 أيام عمل من نهاية الشهر
+• الجوائز المجانية تُفعَّل فوراً
+
+**4. ضوابط النزاهة:**
+• يُمنع استخدام أكثر من حساب
+• يُمنع التلاعب في الصفقات
+• المخالفة = استبعاد فوري`,
+      buttons: [
+        [{ label: '🎁 عرض الجوائز', action: 'goto:competition_prizes' }],
+        [{ label: '✅ مشاركة في المسابقة', action: 'goto:competition_current' }],
+        [{ label: '🔙 رجوع للمسابقة', action: 'goto:competition_current' }],
+      ]
+    },
+
+    competition_prizes: {
+      id: 'competition_prizes',
+      text: `🎁 **الجوائز والمكافآت — يوليو 2025**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الجوائز الرئيسية:**
+
+🥇 **المركز الأول**
+  💵 $500 نقداً
+  💎 شهر Diamond مجاني ($349)
+  🏆 شارة "بطل الشهر" على ملفك
+  📢 تغطية على قناة APEX الرسمية
+
+🥈 **المركز الثاني**
+  💵 $250 نقداً
+  🥇 شهر Elite مجاني ($149)
+
+🥉 **المركز الثالث**
+  💵 $100 نقداً
+  🥈 شهر Pro مجاني ($79)
+
+**المراكز 4-10:**
+  🥈 شهر Pro مجاني لكل منهم
+
+**المراكز 11-25:**
+  🎫 كود خصم 30% على الاشتراك التالي
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💰 **إجمالي جوائز الشهر:** $1,200+ (فوري)`,
+      buttons: [
+        [{ label: '📋 قواعد المسابقة', action: 'goto:competition_rules' }],
+        [{ label: '📊 مرتبتي الحالية', action: 'goto:my_competition_rank' }],
+        [{ label: '🔙 رجوع للمسابقة', action: 'goto:competition_current' }],
+      ]
+    },
+
+    competition_archive: {
+      id: 'competition_archive',
+      text: `🗂️ **أرشيف المسابقات السابقة**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**يونيو 2025:**
+  🥇 CryptoWolf — +89.2% — جائزة: $500
+  🥈 AlphaSignals — +71.4%
+  🥉 ForexKing — +65.8%
+  📍 مرتبتك: 28
+
+**مايو 2025:**
+  🥇 TraderAli — +94.3% — جائزة: $500
+  🥈 GoldMaster — +78.1%
+  🥉 BullRider — +61.2%
+  📍 مرتبتك: 41
+
+**أبريل 2025:**
+  🥇 ScalpKing — +102.7% — جائزة: $500
+  🥈 MarketSniper — +88.9%
+  🥉 CryptoWolf — +76.4%
+  📍 مرتبتك: 56
+
+**مارس 2025:**
+  🥇 TraderAli — +115.3% — جائزة: $500
+  🥈 CryptoWolf — +98.2%
+  🥉 AlphaSignals — +82.1%
+  📍 مرتبتك: 67`,
+      buttons: [
+        [{ label: '📊 نتائج يونيو كاملة', action: 'goto:competition_archive' }],
+        [{ label: '📊 نتائج مايو كاملة', action: 'goto:competition_archive' }],
+        [{ label: '📊 نتائج أبريل كاملة', action: 'goto:competition_archive' }],
+        [{ label: '🔙 رجوع للمسابقات', action: 'goto:competitions' }],
+      ]
+    },
+
+    my_competition_rank: {
+      id: 'my_competition_rank',
+      text: `📊 **تصنيفي وتقدمي**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**📅 هذا الأسبوع:**
+  مرتبتك: **28** من 2,847
+  أداؤك هذا الأسبوع: **+7.4%**
+  المطلوب للمركز 20: +9.1%
+
+**📅 هذا الشهر:**
+  مرتبتك: **34** من 2,847
+  أداؤك هذا الشهر: **+18.7%**
+  المطلوب للمركز 10: +41.8%
+
+**📅 الإجمالي (كل الوقت):**
+  مرتبتك: **127** من 47,230
+  أفضل مرتبة حققتها: **21** (مارس 2025)
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 تاريخ تصنيفاتي:**
+  يناير: 89 | فبراير: 67 | مارس: 21
+  أبريل: 56 | مايو: 41 | يونيو: 28`,
+      buttons: [
+        [{ label: '📅 تصنيفي هذا الأسبوع', action: 'goto:my_competition_rank' }],
+        [{ label: '📅 تصنيفي هذا الشهر', action: 'goto:my_competition_rank' }],
+        [{ label: '📅 تصنيفي الإجمالي', action: 'goto:my_competition_rank' }],
+        [{ label: '💡 كيف أحسّن تصنيفي؟', action: 'goto:academy' }],
+        [{ label: '🔙 رجوع للمسابقات', action: 'goto:competitions' }],
+      ]
+    },
+
+    my_rewards: {
+      id: 'my_rewards',
+      text: `🎁 **جوائزي ومكافآتي**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**🏆 جوائزي المحققة:**
+
+✅ **مارس 2025** — المركز الـ21
+  جائزة: كود خصم 30% ✅ مستخدَم
+
+✅ **مايو 2025** — المركز الـ41
+  جائزة: كود خصم 30% ✅ مستخدَم
+
+✅ **يونيو 2025** — المركز الـ28
+  جائزة: كود خصم 30% ⏳ لم يُستخدَم بعد
+  الكود: **RANK28JUNE**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**🎯 الجوائز التي أسعى لها:**
+• المركز 10 هذا الشهر → شهر Pro مجاني
+• المركز 3 → $100 + شهر Elite
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💰 **رصيدي من الإحالات:** $45.00`,
+      buttons: [
+        [{ label: '🎫 استخدام كود RANK28JUNE', action: 'goto:discount_code' }],
+        [{ label: '💰 سحب رصيد الإحالة', action: 'goto:referral_withdraw' }],
+        [{ label: '🏆 المسابقة الحالية', action: 'goto:competition_current' }],
+        [{ label: '🔙 رجوع للمسابقات', action: 'goto:competitions' }],
+      ]
+    },
+
+    // ─── إعدادات متقدمة ───────────────────────────────────────────
+    settings_markets: {
+      id: 'settings_markets',
+      text: `📊 **الأسواق المفضلة**
+
+اختر الأسواق التي تريد متابعتها وتلقي إشاراتها:
+
+${userState?.markets?.length ? `✅ **المفعّل حالياً:** ${userState.markets.join(' — ')}` : '⚪ لا يوجد أسواق محددة'}`,
+      buttons: [
+        [{ label: `${userState?.markets?.includes('كريبتو') ? '✅' : '🔵'} العملات الرقمية`, action: 'stoggle_market:كريبتو' }],
+        [{ label: `${userState?.markets?.includes('فوركس') ? '✅' : '🟢'} الفوركس`, action: 'stoggle_market:فوركس' }],
+        [{ label: `${userState?.markets?.includes('أسهم أمريكية') ? '✅' : '🟡'} الأسهم الأمريكية`, action: 'stoggle_market:أسهم أمريكية' }],
+        [{ label: `${userState?.markets?.includes('أسهم سعودية') ? '✅' : '🟠'} الأسهم السعودية`, action: 'stoggle_market:أسهم سعودية' }],
+        [{ label: `${userState?.markets?.includes('سلع') ? '✅' : '🟤'} السلع والذهب`, action: 'stoggle_market:سلع' }],
+        [{ label: `${userState?.markets?.includes('مؤشرات') ? '✅' : '⚪'} المؤشرات العالمية`, action: 'stoggle_market:مؤشرات' }],
+        [{ label: `${userState?.markets?.includes('أسهم إماراتية') ? '✅' : '🔶'} الأسهم الإماراتية`, action: 'stoggle_market:أسهم إماراتية' }],
+        [{ label: '🔀 تفعيل الكل', action: 'select_all_markets_s' }],
+        [{ label: '✅ حفظ التغييرات', action: 'goto:settings' }],
+        [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
+      ]
+    },
+
+    settings_style: {
+      id: 'settings_style',
+      text: `⚡ **أسلوب التداول المفضل**
+
+اختر أسلوب أو أكثر من أساليب التداول المفضلة لديك:
+
+**أسلوبك الحالي:** ${userState?.tradingStyle || 'لم يُحدَّد'}`,
+      buttons: [
+        [{ label: '⚡ سكالبينج — صفقات دقائق', action: 'sset_style:سكالبينج' }],
+        [{ label: '📊 تداول يومي — نفس اليوم', action: 'sset_style:يومي' }],
+        [{ label: '📈 سوينج — أياماً لأسابيع', action: 'sset_style:سوينج' }],
+        [{ label: '🏦 استثماري — أشهر', action: 'sset_style:استثماري' }],
+        [{ label: '🌐 الكل — جميع الأساليب', action: 'sset_style:الكل' }],
+        [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
+      ]
+    },
+
+    settings_level: {
+      id: 'settings_level',
+      text: `🎯 **مستوى الخبرة**
+
+حدّث مستواك الحالي في التداول:
+
+**مستواك الحالي:** ${userState?.experience || 'لم يُحدَّد'}`,
+      buttons: [
+        [{ label: '🌱 مبتدئ — أقل من 6 أشهر', action: 'sset_exp:مبتدئ' }],
+        [{ label: '📊 متوسط — 6 أشهر إلى سنتين', action: 'sset_exp:متوسط' }],
+        [{ label: '🏆 متقدم — سنتين إلى 5 سنوات', action: 'sset_exp:متقدم' }],
+        [{ label: '👑 خبير — أكثر من 5 سنوات', action: 'sset_exp:محترف' }],
+        [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
+      ]
+    },
+
+    settings_privacy: {
+      id: 'settings_privacy',
+      text: `🔐 **الخصوصية والأمان**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**إعدادات الخصوصية الحالية:**
+
+🔒 إخفاء الرصيد عن الآخرين — **مفعّل**
+🔒 إخفاء الصفقات عن الآخرين — **مفعّل**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**روابط مهمة:**`,
+      buttons: [
+        [{ label: '🔒 إخفاء الرصيد (مفعّل)', action: 'goto:settings_privacy' }],
+        [{ label: '🔒 إخفاء الصفقات (مفعّل)', action: 'goto:settings_privacy' }],
+        [{ label: '📋 سياسة الخصوصية', action: 'goto:support' }],
+        [{ label: '📋 شروط الاستخدام', action: 'goto:support' }],
+        [{ label: '🗑️ حذف بياناتي', action: 'goto:delete_account' }],
+        [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
+      ]
+    },
+
+    // ─── ربط منصات التداول ───────────────────────────────────────
+    connect_bybit: {
+      id: 'connect_bybit',
+      text: `🟢 **ربط منصة Bybit**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**خطوات الربط:**
+1. افتح تطبيق Bybit
+2. اذهب لـ الحساب → API Management
+3. أنشئ API جديد بصلاحيات القراءة والتداول
+4. انسخ API Key و Secret Key وأدخلهما أدناه
+
+⚠️ **تحذير أمني:**
+• لا تشارك بيانات API مع أحد
+• فعّل IP Whitelist في إعدادات Bybit
+• تأكد من إيقاف صلاحية السحب
+
+أدخل بيانات API:`,
+      buttons: [
+        [{ label: '🔗 ربط API الآن', action: 'goto:connect_success' }],
+        [{ label: '🤖 تنفيذ تلقائي', action: 'goto:auto_trade_settings' }],
+        [{ label: '👆 تنفيذ بضغطة', action: 'goto:auto_trade_settings' }],
+        [{ label: '⚙️ إعدادات متقدمة', action: 'goto:auto_trade_settings' }],
+        [{ label: '🔍 اختبار الاتصال', action: 'goto:connect_success' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_okx: {
+      id: 'connect_okx',
+      text: `🔵 **ربط منصة OKX**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**خطوات الربط:**
+1. افتح تطبيق OKX
+2. اذهب لـ Profile → API
+3. أنشئ API جديد بصلاحيات القراءة والتداول
+4. انسخ API Key، Secret Key و Passphrase
+
+⚠️ OKX تتطلب Passphrase إضافياً لأمان أعلى.
+
+أدخل بيانات API:`,
+      buttons: [
+        [{ label: '🔗 ربط API الآن', action: 'goto:connect_success' }],
+        [{ label: '🤖 تنفيذ تلقائي', action: 'goto:auto_trade_settings' }],
+        [{ label: '⚙️ إعدادات متقدمة', action: 'goto:auto_trade_settings' }],
+        [{ label: '🔍 اختبار الاتصال', action: 'goto:connect_success' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_coinbase: {
+      id: 'connect_coinbase',
+      text: `🟠 **ربط منصة Coinbase Advanced**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**ملاحظة:** نسخ Coinbase Pro → Coinbase Advanced Trade.
+
+**خطوات الربط:**
+1. افتح coinbase.com
+2. اذهب لـ Settings → API
+3. أنشئ مفتاح API جديداً
+4. انسخ API Key و Secret
+
+أدخل بيانات API:`,
+      buttons: [
+        [{ label: '🔗 ربط API الآن', action: 'goto:connect_success' }],
+        [{ label: '⚙️ إعدادات متقدمة', action: 'goto:auto_trade_settings' }],
+        [{ label: '🔍 اختبار الاتصال', action: 'goto:connect_success' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_kucoin: {
+      id: 'connect_kucoin',
+      text: `🔶 **ربط منصة KuCoin**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**خطوات الربط:**
+1. افتح kucoin.com
+2. اذهب لـ Account → API Management
+3. أنشئ API جديد
+4. انسخ API Key، Secret، و Passphrase
+
+أدخل بيانات API:`,
+      buttons: [
+        [{ label: '🔗 ربط API الآن', action: 'goto:connect_success' }],
+        [{ label: '⚙️ إعدادات متقدمة', action: 'goto:auto_trade_settings' }],
+        [{ label: '🔍 اختبار الاتصال', action: 'goto:connect_success' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_mt4: {
+      id: 'connect_mt4',
+      text: `📊 **ربط MetaTrader 4**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**خطوات الربط:**
+1. افتح MetaTrader 4
+2. اذهب لـ Tools → Options → Expert Advisors
+3. فعّل "Allow DLL imports"
+4. أدخل بيانات الخادم المزوّد منك من APEX
+
+**ملاحظة:** الربط مع MT4 يتطلب EA (Expert Advisor) مخصصاً يُرسَل لك بعد الربط.`,
+      buttons: [
+        [{ label: '🔗 طلب EA للربط', action: 'goto:support' }],
+        [{ label: '📞 تواصل مع الدعم للمساعدة', action: 'goto:support' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_mt5: {
+      id: 'connect_mt5',
+      text: `📊 **ربط MetaTrader 5**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**خطوات الربط:**
+1. افتح MetaTrader 5
+2. اذهب لـ Tools → Options → Expert Advisors
+3. فعّل "Allow automated trading"
+4. أدخل بيانات الخادم المزوّد من APEX
+
+**ملاحظة:** الربط مع MT5 يتطلب EA مخصصاً يُرسَل لك من فريق الدعم.`,
+      buttons: [
+        [{ label: '🔗 طلب EA للربط', action: 'goto:support' }],
+        [{ label: '📞 تواصل مع الدعم للمساعدة', action: 'goto:support' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_ib: {
+      id: 'connect_ib',
+      text: `📈 **ربط Interactive Brokers**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**خطوات الربط:**
+1. افتح Interactive Brokers TWS أو IB Gateway
+2. اذهب لـ File → Global Configuration → API
+3. فعّل "Enable ActiveX and Socket Clients"
+4. أدخل بيانات الاتصال
+
+**ملاحظة:** يتطلب حساباً فعالاً في Interactive Brokers بصلاحيات API.`,
+      buttons: [
+        [{ label: '🔗 بدء عملية الربط', action: 'goto:support' }],
+        [{ label: '📞 تواصل مع الدعم للمساعدة', action: 'goto:support' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_tradingview: {
+      id: 'connect_tradingview',
+      text: `📈 **ربط TradingView**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الحالة:** غير مربوط ❌
+
+**طريقة الربط:**
+الربط مع TradingView يتم عبر **Webhooks** — تُرسَل إشارات APEX تلقائياً لـ TradingView Alerts.
+
+**الخطوات:**
+1. انسخ رابط Webhook المُخصَّص لك
+2. في TradingView، أنشئ Alert جديداً
+3. في خانة "Webhook URL"، الصق الرابط
+4. فعّل "Alert Actions" المطلوبة
+
+**رابط Webhook الخاص بك:**
+\`https://apex.trading/wh/trader_apex_xyz\``,
+      buttons: [
+        [{ label: '📋 نسخ رابط Webhook', action: 'goto:connect_success' }],
+        [{ label: '📖 دليل الربط الكامل', action: 'goto:support' }],
+        [{ label: '🔍 اختبار الاتصال', action: 'goto:connect_success' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    connect_request: {
+      id: 'connect_request',
+      text: `➕ **طلب ربط منصة جديدة**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**المنصات المدعومة حالياً:**
+✅ Binance | ✅ Bybit | ✅ OKX
+✅ Coinbase | ✅ KuCoin | ✅ MT4 | ✅ MT5
+✅ Interactive Brokers | ✅ TradingView
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**هل منصتك غير موجودة في القائمة؟**
+
+أرسل لنا اسم المنصة وسنعمل على إضافتها في أقرب تحديث!
+
+اكتب اسم المنصة التي تريدها:`,
+      buttons: [
+        [{ label: '✅ إرسال الطلب', action: 'goto:support' }],
+        [{ label: '🔙 رجوع لقائمة المنصات', action: 'goto:connect_platforms' }],
+      ]
+    },
+
+    // ─── الأكاديمية — مستويات إضافية ────────────────────────────
+    academy_level2: {
+      id: 'academy_level2',
+      text: `📊 **المستوى الثاني — المتوسط**
+
+تقدمك: الدرس 2 من 25 — **▓▓░░░░░░░░ 8%**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**قائمة الدروس:**
+✅ **الدرس 1:** المؤشرات الفنية — نظرة شاملة
+📍 **الدرس 2:** مؤشر RSI — كيف تستخدمه ← **الحالي**
+⬜ **الدرس 3:** مؤشر MACD
+⬜ **الدرس 4:** المتوسطات المتحركة EMA/SMA
+⬜ **الدرس 5:** Bollinger Bands
+⬜ **الدرس 6:** فيبوناتشي للارتداد
+⬜ **الدرس 7:** مستويات الدعم والمقاومة المتقدمة
+⬜ **الدرس 8:** أنماط الرسوم البيانية
+⬜ **الدرس 9:** Volume وتحليل الحجم
+⬜ **الدرس 10:** إدارة الصفقات المتقدمة
+⬜ ... حتى الدرس 25`,
+      buttons: [
+        [{ label: '▶️ ابدأ الدرس الحالي', action: 'goto:lesson_content' }],
+        [{ label: '📋 عرض جميع الدروس', action: 'goto:academy_level2' }],
+        [{ label: '▶️ استمر من حيث توقفت', action: 'goto:lesson_content' }],
+        [{ label: '📊 تقدمي في هذا المستوى', action: 'goto:my_competition_rank' }],
+        [{ label: '📝 اختبار تقييم المستوى', action: 'goto:lesson_quiz' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    academy_level3: {
+      id: 'academy_level3',
+      text: `🏆 **المستوى الثالث — المتقدم**
+
+تقدمك: لم تبدأ بعد — **░░░░░░░░░░ 0%**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**قائمة الدروس:**
+⬜ **الدرس 1:** تحليل الامتداد الهيكلي
+⬜ **الدرس 2:** نظرية إليوت للموجات
+⬜ **الدرس 3:** Smart Money Concepts (SMC)
+⬜ **الدرس 4:** Order Blocks وImbalances
+⬜ **الدرس 5:** Liquidity وStop Hunts
+⬜ **الدرس 6:** Market Structure Shifts
+⬜ **الدرس 7:** تداول الأخبار المتقدم
+⬜ **الدرس 8:** ارتباط الأسواق
+⬜ ... حتى الدرس 20
+
+⚠️ **متطلبات الدخول:**
+يجب إكمال المستوى الثاني بنسبة 80% على الأقل.`,
+      buttons: [
+        [{ label: '🔓 أكمل المستوى الثاني أولاً', action: 'goto:academy_level2' }],
+        [{ label: '📊 مستواي الحالي', action: 'goto:academy_level2' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    academy_level4: {
+      id: 'academy_level4',
+      text: `👑 **المستوى الرابع — الخبير**
+
+تقدمك: مقفول — 🔒
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**دروس حصرية للمتداولين المحترفين:**
+🔒 **الدرس 1:** تحليل بنية السوق المؤسسي
+🔒 **الدرس 2:** تداول العقود الآجلة للخبراء
+🔒 **الدرس 3:** Derivatives وأدوات التحوط
+🔒 **الدرس 4:** بناء نظام تداول آلي
+🔒 **الدرس 5:** Portfolio Rebalancing المتقدم
+🔒 **الدرس 6:** إدارة الصناديق والعائد
+🔒 ... حتى الدرس 15
+
+⚠️ **متطلبات الدخول:**
+• إكمال المستوى الثالث 100%
+• خطة Elite أو Diamond فقط`,
+      buttons: [
+        [{ label: '⬆️ ترقية للخطة Elite — $149', action: 'goto:subscription_plans' }],
+        [{ label: '🏆 أكمل المستوى الثالث أولاً', action: 'goto:academy_level3' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    video_library: {
+      id: 'video_library',
+      text: `📹 **مكتبة الفيديوهات التعليمية**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**🌱 للمبتدئين (12 فيديو):**
+
+▶️ **1.** مقدمة في التداول — 15 دقيقة
+  👁️ 12,450 مشاهدة ⭐⭐⭐⭐⭐
+
+▶️ **2.** كيف تقرأ الشارت — 22 دقيقة
+  👁️ 9,870 مشاهدة ⭐⭐⭐⭐⭐
+
+▶️ **3.** الشموع اليابانية بالتفصيل — 31 دقيقة
+  👁️ 8,340 مشاهدة ⭐⭐⭐⭐
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**📊 للمتوسطين (18 فيديو):**
+
+▶️ **1.** المؤشرات الفنية الكاملة — 45 دقيقة
+  👁️ 6,790 مشاهدة ⭐⭐⭐⭐⭐
+
+▶️ **2.** استراتيجية RSI+MACD — 38 دقيقة
+  👁️ 5,120 مشاهدة ⭐⭐⭐⭐`,
+      buttons: [
+        [{ label: '🌱 فيديوهات المبتدئين', action: 'goto:video_library' }],
+        [{ label: '📊 فيديوهات المتوسطين', action: 'goto:video_library' }],
+        [{ label: '🏆 فيديوهات المتقدمين', action: 'goto:video_library' }],
+        [{ label: '👑 فيديوهات الخبراء', action: 'goto:video_library' }],
+        [{ label: '▶️ مشاهدة مقدمة التداول', action: 'goto:lesson_content' }],
+        [{ label: '▶️ مشاهدة شرح الشموع', action: 'goto:lesson_content' }],
+        [{ label: '⭐ المحفوظات', action: 'goto:favorite_strategies' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    glossary: {
+      id: 'glossary',
+      text: `📖 **مسرد المصطلحات المالية**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**أحدث المصطلحات المبحوثة:**
+
+📌 **Spread** — الفرق بين سعر الشراء والبيع. كلما كان الـ Spread أصغر كلما كانت تكلفة التداول أقل.
+
+📌 **Leverage — الرافعة المالية** — استخدام رأس مال مقترض لتضخيم حجم الصفقة. رافعة 10x تعني أن $100 يتحكم في $1,000.
+
+📌 **RSI** — مؤشر القوة النسبية. يقيس سرعة وحجم تغيرات السعر. فوق 70 = مشترى بإفراط، تحت 30 = مباع بإفراط.
+
+📌 **MACD** — مؤشر تقاطع المتوسطات المتحركة. يُظهر اتجاه الزخم ونقاط التحول.
+
+📌 **Fibonacci** — نسب رياضية (23.6%, 38.2%, 61.8%) تُستخدم لتحديد مستويات الدعم والمقاومة المحتملة.`,
+      buttons: [
+        [{ label: '🔍 بحث عن مصطلح', action: 'goto:glossary' }],
+        [{ label: 'أ — تصفح أبجدياً', action: 'goto:glossary' }, { label: 'ب', action: 'goto:glossary' }, { label: 'ت', action: 'goto:glossary' }],
+        [{ label: 'ج', action: 'goto:glossary' }, { label: 'خ', action: 'goto:glossary' }, { label: 'ر', action: 'goto:glossary' }],
+        [{ label: 'ش', action: 'goto:glossary' }, { label: 'ع', action: 'goto:glossary' }, { label: 'م', action: 'goto:glossary' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    level_assessment: {
+      id: 'level_assessment',
+      text: `❓ **اختبارات تقييم المستوى**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+اختبر نفسك وحدّد مستواك الحقيقي في التداول.
+
+**الاختبار الشامل:**
+• 20 سؤالاً متنوعاً
+• يغطي التحليل الفني والأساسي وإدارة المخاطر
+• يستغرق حوالي 15 دقيقة
+• ستحصل على تقرير مفصّل بنقاط قوتك وضعفك
+
+**نتيجة اختبارك الأخير:**
+⬜ لم تُجرِ أي اختبار بعد
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 *نُنصح بإجراء الاختبار كل 3 أشهر لمتابعة تطورك.*`,
+      buttons: [
+        [{ label: '▶️ ابدأ اختبار تحديد المستوى', action: 'goto:lesson_quiz', color: 'green' }],
+        [{ label: '🔄 أعِد الاختبار', action: 'goto:lesson_quiz' }],
+        [{ label: '📊 نتيجتي ومستواي', action: 'goto:status' }],
+        [{ label: '🚀 ابدأ من مستواك المحدد', action: 'goto:academy_level1' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    favorite_strategies: {
+      id: 'favorite_strategies',
+      text: `⭐ **استراتيجياتي المفضلة**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**استراتيجياتك المحفوظة (3):**
+
+⭐ **تقاطع المتوسطات المتحركة**
+  المستوى: مبتدئ | النجاح: 72% | الأسواق: الكل
+  آخر استخدام: منذ يومين
+
+⭐ **فيبوناتشي للارتداد**
+  المستوى: متوسط | النجاح: 78% | الأسواق: كريبتو وفوركس
+  آخر استخدام: منذ أسبوع
+
+⭐ **RSI Divergence**
+  المستوى: متوسط | النجاح: 79% | الأسواق: كريبتو وفوركس
+  آخر استخدام: منذ 3 أيام
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+اضغط على أي استراتيجية لعرض تفاصيلها الكاملة:`,
+      buttons: [
+        [{ label: '📋 تفاصيل تقاطع المتوسطات', action: 'goto:strategy_detail' }],
+        [{ label: '📋 تفاصيل فيبوناتشي', action: 'goto:strategy_detail' }],
+        [{ label: '📋 تفاصيل RSI Divergence', action: 'goto:strategy_detail' }],
+        [{ label: '🔍 استعراض كل الاستراتيجيات', action: 'goto:strategy_library' }],
+        [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
+      ]
+    },
+
+    strategy_detail: {
+      id: 'strategy_detail',
+      text: `📋 **تفاصيل الاستراتيجية — فيبوناتشي للارتداد**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**المستوى:** متوسط
+**نسبة النجاح:** **78%** (على 18 شهر)
+**الأسواق:** الكريبتو والفوركس والسلع
+**الإطار الزمني:** 4H و1D
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**شرح الاستراتيجية:**
+
+تعتمد على رسم مستويات فيبوناتشي من قاع الموجة لقمتها (في الاتجاه الصاعد) أو من القمة للقاع (في الاتجاه الهابط)، ثم انتظار ارتداد السعر عند المستويات الرئيسية:
+
+• **38.2%** — ارتداد خفيف (دخول جزئي)
+• **50%** — ارتداد متوسط (دخول رئيسي)
+• **61.8%** — الذهبي (أقوى نقطة دخول)
+
+**شروط الدخول:**
+✅ ارتداد عند 61.8% مع شمعة انعكاس
+✅ RSI في منطقة مشترى/مباع بإفراط
+✅ حجم تداول طبيعي أو منخفض عند الارتداد`,
+      buttons: [
+        [{ label: '📊 نتائجها التاريخية', action: 'goto:strategy_detail' }],
+        [{ label: '📹 فيديو شرح الاستراتيجية', action: 'goto:video_library' }],
+        [{ label: '⭐ حفظ في المفضلة', action: 'goto:favorite_strategies' }],
+        [{ label: '📡 أحدث إشارات هذه الاستراتيجية', action: 'goto:signals_live' }],
+        [{ label: '🔙 رجوع لمكتبة الاستراتيجيات', action: 'goto:strategy_library' }],
+      ]
+    },
+
+    // ─── الدفع — وسائل إضافية ──────────────────────────────────
+    payment_paypal: {
+      id: 'payment_paypal',
+      text: `🅿️ **الدفع عبر PayPal**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**ملخص الطلب:**
+• الخطة: **Pro الفضية** 🥈
+• المبلغ: **$55.30** (بعد خصم 30%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+سيتم تحويلك لصفحة PayPal لإتمام الدفع الآن.
+
+⚠️ **مهم:**
+• تأكد من تسجيل الدخول لحساب PayPal الصحيح
+• بعد إتمام الدفع، اضغط "تأكيد بعد الدفع"`,
+      buttons: [
+        [{ label: '🔗 متابعة على PayPal', action: 'goto:payment_success', color: 'green' }],
+        [{ label: '✅ أكدت الدفع من PayPal', action: 'goto:payment_success' }],
+        [{ label: '🔙 رجوع لاختيار طريقة الدفع', action: 'goto:payment_method' }],
+      ]
+    },
+
+    payment_bank: {
+      id: 'payment_bank',
+      text: `💸 **تحويل بنكي**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**بيانات الحساب البنكي:**
+
+🏦 البنك: **Emirates NBD**
+👤 اسم المستفيد: **APEX Trading FZ-LLC**
+🔢 رقم الحساب: **1234567890123**
+🌐 IBAN: **AE070331234567890123456**
+🔑 SWIFT/BIC: **EBILAEAD**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**المبلغ:** $55.30 USD أو ما يعادله بالدرهم
+**المرجع:** APX-2025-47291
+
+⚠️ التحقق يستغرق 1-2 يوم عمل.`,
+      buttons: [
+        [{ label: '📋 نسخ بيانات الحساب', action: 'goto:payment_bank' }],
+        [{ label: '✅ أكّد بعد التحويل', action: 'goto:payment_success', color: 'green' }],
+        [{ label: '🔙 رجوع لاختيار طريقة الدفع', action: 'goto:payment_method' }],
+      ]
+    },
+
+    payment_stars: {
+      id: 'payment_stars',
+      text: `⭐ **الدفع بـ Telegram Stars**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**ملخص الطلب:**
+• الخطة: **Pro الفضية** 🥈
+• المبلغ بالدولار: **$55.30**
+• المبلغ بـ Stars: **⭐ 5,530 Stars**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**رصيدك الحالي من Stars:** ⭐ 1,240
+
+⚠️ رصيدك غير كافٍ. يمكنك شراء المزيد من Stars من إعدادات Telegram.
+
+💡 *Telegram Stars هي عملة Telegram الرسمية — آمنة 100%.*`,
+      buttons: [
+        [{ label: '⭐ الدفع بـ Stars الآن', action: 'goto:payment_success', color: 'green' }],
+        [{ label: '➕ شراء المزيد من Stars', action: 'goto:payment_method' }],
+        [{ label: '🔙 رجوع لاختيار طريقة الدفع', action: 'goto:payment_method' }],
+      ]
+    },
+
+    payment_referral_balance: {
+      id: 'payment_referral_balance',
+      text: `🎁 **استخدام رصيد الإحالة**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**رصيدك من الإحالات:** $45.00
+
+**المبلغ المطلوب:** $55.30
+
+**ملخص بعد التطبيق:**
+• خصم رصيد الإحالة: -$45.00
+• المبلغ المتبقي للدفع: **$10.30** فقط
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+ادفع الفرق بأي طريقة:`,
+      buttons: [
+        [{ label: '✅ تطبيق الرصيد — ادفع $10.30 فقط', action: 'goto:payment_method', color: 'green' }],
+        [{ label: '💳 دفع الفرق بالبطاقة', action: 'goto:payment_card' }],
+        [{ label: '🪙 دفع الفرق بالكريبتو', action: 'goto:payment_crypto' }],
+        [{ label: '🔙 رجوع لاختيار طريقة الدفع', action: 'goto:payment_method' }],
+      ]
+    },
+
+    // ─── AI والتوصيات ─────────────────────────────────────────────
+    ai_recommendations: {
+      id: 'ai_recommendations',
+      text: `🤖 **توصيات الذكاء الاصطناعي**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**تحليل APEX AI — الآن**
+
+بناءً على تحليل **500+ مؤشر** في الوقت الفعلي:
+
+**🔥 توصيات مخصصة لك:**
+
+**1. BTC/USDT** — توقع صعود قوي
+  الثقة: **92%** | الإطار: 4H
+  السبب: اختراق مقاومة $70k مع حجم تداول عالٍ
+
+**2. XAU/USD** — فرصة شراء
+  الثقة: **88%** | الإطار: 1D
+  السبب: بيانات ضعيفة للدولار + طلب مؤسسي قوي
+
+**3. EUR/USD** — توقع هبوط
+  الثقة: **81%** | الإطار: 4H
+  السبب: تباعد MACD + اقتراب من مقاومة رئيسية
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🕐 آخر تحديث: منذ 3 دقائق`,
+      buttons: [
+        [{ label: '📡 إشارة BTC الكاملة', action: 'goto:signal_btc' }],
+        [{ label: '📡 إشارة XAU الكاملة', action: 'goto:signal_gold' }],
+        [{ label: '📡 إشارة EUR/USD الكاملة', action: 'goto:signal_forex' }],
+        [{ label: '🔄 تحديث التوصيات', action: 'goto:ai_recommendations' }],
+        [{ label: '💬 اسأل المساعد الذكي', action: 'goto:ai_assistant' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
