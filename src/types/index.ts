@@ -93,7 +93,15 @@ export type Screen =
   | 'renewal_alert'
   | 'target_alert'
   | 'volatility_alert'
-  | 'payment_card';
+  | 'payment_card'
+  | 'language_search'
+  | 'timezone_custom'
+  | 'review_edit'
+  | 'trial_24h'
+  | 'trial_6h'
+  | 'trade_filter'
+  | 'signal_entered'
+  | 'cancel_auto_renewal';
 
 export interface Message {
   id: string;

@@ -578,6 +578,8 @@ ${userState?.markets?.length ? `✅ **المحدد حالياً:** ${userState.m
 
 الإجمالي اليوم: **7 إشارات** | نجاح: **5 (71.4%)**`,
       buttons: [
+        [{ label: '🔵 كريبتو', action: 'filter_signals:crypto' }, { label: '🟢 فوركس', action: 'filter_signals:forex' }, { label: '🟡 أسهم', action: 'filter_signals:stocks' }],
+        [{ label: '🟤 ذهب', action: 'filter_signals:gold' }, { label: '⚪ مؤشرات', action: 'filter_signals:indices' }, { label: '📋 الكل', action: 'filter_signals:all' }],
         [{ label: '🟢 BTC/USDT — التفاصيل الكاملة', action: 'goto:signal_btc' }],
         [{ label: '🔴 EUR/USD — التفاصيل الكاملة', action: 'goto:signal_forex' }],
         [{ label: '🟤 ذهب XAU/USD — التفاصيل', action: 'goto:signal_gold' }],
@@ -672,9 +674,10 @@ ${userState?.markets?.length ? `✅ **المحدد حالياً:** ${userState.m
 
 ⚠️ *هذه ليست نصيحة مالية. تداول بمسؤولية.*`,
       buttons: [
-        [{ label: '✅ دخلت الصفقة', action: 'goto:signal_update_sl' }, { label: '⏭️ تخطي', action: 'goto:signals_live' }],
+        [{ label: '✅ دخلت الصفقة', action: 'goto:signal_entered' }, { label: '⏭️ تخطي', action: 'goto:signals_live' }],
         [{ label: '🔔 تنبيه عند تحقق الهدف', action: 'goto:notification_settings' }],
-        [{ label: '📤 مشاركة الإشارة', action: 'goto:social_trading' }],
+        [{ label: '📤 مشاركة الإشارة', action: 'goto:social_trading' }, { label: '💬 مناقشة الإشارة', action: 'goto:discussion_rooms' }],
+        [{ label: '📊 الشارت المباشر', action: 'goto:live_markets' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -703,8 +706,10 @@ ${userState?.markets?.length ? `✅ **المحدد حالياً:** ${userState.m
 
 ⚠️ *هذه ليست نصيحة مالية. تداول بمسؤولية.*`,
       buttons: [
-        [{ label: '✅ دخلت الصفقة', action: 'goto:signals_live' }, { label: '⏭️ تخطي', action: 'goto:signals_live' }],
+        [{ label: '✅ دخلت الصفقة', action: 'goto:signal_entered' }, { label: '⏭️ تخطي', action: 'goto:signals_live' }],
         [{ label: '🔔 تنبيه عند تحقق الهدف', action: 'goto:notification_settings' }],
+        [{ label: '📤 مشاركة الإشارة', action: 'goto:social_trading' }, { label: '💬 مناقشة الإشارة', action: 'goto:discussion_rooms' }],
+        [{ label: '📊 الشارت المباشر', action: 'goto:live_markets' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -733,8 +738,10 @@ ${userState?.markets?.length ? `✅ **المحدد حالياً:** ${userState.m
 
 ⚠️ *هذه ليست نصيحة مالية. تداول بمسؤولية.*`,
       buttons: [
-        [{ label: '✅ دخلت الصفقة', action: 'goto:signal_update_target' }, { label: '⏭️ تخطي', action: 'goto:signals_live' }],
+        [{ label: '✅ دخلت الصفقة', action: 'goto:signal_entered' }, { label: '⏭️ تخطي', action: 'goto:signals_live' }],
         [{ label: '🔔 تنبيه عند تحقق الهدف', action: 'goto:notification_settings' }],
+        [{ label: '📤 مشاركة الإشارة', action: 'goto:social_trading' }, { label: '💬 مناقشة الإشارة', action: 'goto:discussion_rooms' }],
+        [{ label: '📊 الشارت المباشر', action: 'goto:live_markets' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -757,6 +764,7 @@ ${userState?.markets?.length ? `✅ **المحدد حالياً:** ${userState.m
 ⏱️ الوقت منذ فتح الصفقة: **8 ساعات**`,
       buttons: [
         [{ label: '✅ مفهوم — سأطبق المقترح', action: 'goto:signal_closed_win' }],
+        [{ label: '📊 عرض الشارت المباشر', action: 'goto:live_markets' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -934,6 +942,7 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 🟡 الأسهم: حذر قبل موسم النتائج`,
       buttons: [
         [{ label: '📅 التقويم الاقتصادي الأسبوعي', action: 'goto:weekly_calendar' }],
+        [{ label: '📄 تصدير التقرير PDF', action: 'goto:export_data' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -970,7 +979,9 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 💰 الاستثمار: نجاح **81%**`,
       buttons: [
         [{ label: '📅 هذا الأسبوع', action: 'goto:dashboard' }, { label: '📆 هذا الشهر', action: 'goto:dashboard' }],
+        [{ label: '📆 آخر 3 أشهر', action: 'goto:dashboard' }, { label: '🕰️ كل الوقت', action: 'goto:dashboard' }],
         [{ label: '📋 سجل جميع الصفقات', action: 'goto:trade_history' }],
+        [{ label: '📄 تصدير تقرير PDF', action: 'goto:export_data' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -993,7 +1004,9 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📄 الصفحة **1** من **13**`,
       buttons: [
-        [{ label: '⏭️ التالي', action: 'goto:trade_history' }, { label: '🔍 بحث وفلترة', action: 'goto:trade_history' }],
+        [{ label: '⏭️ التالي', action: 'goto:trade_history' }, { label: '⏮️ السابق', action: 'goto:trade_history' }],
+        [{ label: '🔍 بحث وفلترة', action: 'goto:trade_filter' }],
+        [{ label: '📄 تصدير CSV', action: 'goto:export_data' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1038,6 +1051,9 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
         [{ label: '📊 حد الخسارة الأسبوعية (حالياً 7%)', action: 'goto:risk_center' }],
         [{ label: '🔢 عدد الصفقات المتزامنة (حالياً 5)', action: 'goto:risk_center' }],
         [{ label: '📏 الحد الأقصى لحجم الصفقة (حالياً 3%)', action: 'goto:risk_center' }],
+        [{ label: '⚡ تغيير الرافعة القصوى (حالياً 10x)', action: 'goto:risk_center' }],
+        [{ label: '🛑 تفعيل/تعطيل وقف الخسائر الإلزامي', action: 'goto:risk_center' }],
+        [{ label: '🔄 إعادة تعيين للإعدادات الافتراضية', action: 'goto:risk_center' }],
         [{ label: '🔙 رجوع', action: 'goto:risk_center' }],
       ]
     },
@@ -1130,6 +1146,8 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
         [{ label: '🎯 المستوى الثالث — المتقدم — 20 درساً', action: 'goto:academy_level1' }],
         [{ label: '🏆 المستوى الرابع — الخبير — 15 درساً', action: 'goto:academy_level1' }],
         [{ label: '📚 مكتبة الاستراتيجيات — 50+ استراتيجية', action: 'goto:strategy_library' }],
+        [{ label: '🎬 فيديوهات تعليمية', action: 'goto:academy_level1' }],
+        [{ label: '📝 اختبارات تقييم المستوى', action: 'goto:lesson_quiz' }],
         [{ label: '🏠 رجوع للقائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1242,6 +1260,8 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
       buttons: [
         [{ label: '📋 عرض جميع الاستراتيجيات', action: 'goto:strategy_library' }],
         [{ label: '🔍 فلترة حسب السوق', action: 'goto:strategy_library' }],
+        [{ label: '📊 فلترة حسب المستوى', action: 'goto:strategy_library' }],
+        [{ label: '⭐ الأعلى نجاحاً فقط', action: 'goto:strategy_library' }],
         [{ label: '🔙 رجوع للأكاديمية', action: 'goto:academy' }],
       ]
     },
@@ -1277,6 +1297,9 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
         [{ label: '📊 التصنيف الكامل', action: 'goto:competitions' }],
         [{ label: '💬 غرف النقاش', action: 'goto:discussion_rooms' }],
         [{ label: '👤 ملف TraderAli', action: 'goto:trader_profile' }],
+        [{ label: '📡 إشارات المجتمع', action: 'goto:signals_live' }],
+        [{ label: '📤 شارك إشاراتك', action: 'goto:discussion_rooms' }],
+        [{ label: '👤 ملفي الشخصي', action: 'goto:status' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1300,6 +1323,8 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
 ✅ XAU شراء — **+4.7%**`,
       buttons: [
         [{ label: '➕ متابعة هذا المتداول', action: 'goto:social_trading' }],
+        [{ label: '🤖 نسخ صفقاته تلقائياً — Elite+', action: 'goto:upgrade_required' }],
+        [{ label: '💬 إرسال رسالة', action: 'goto:discussion_rooms' }],
         [{ label: '🔙 رجوع للتداول الاجتماعي', action: 'goto:social_trading' }],
       ]
     },
@@ -1317,6 +1342,8 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
       buttons: [
         [{ label: '🔵 دخول غرفة الكريبتو', action: 'goto:discussion_rooms' }],
         [{ label: '🟢 دخول غرفة الفوركس', action: 'goto:discussion_rooms' }],
+        [{ label: '🟡 دخول غرفة الأسهم الأمريكية', action: 'goto:discussion_rooms' }],
+        [{ label: '🟤 دخول غرفة الذهب والسلع', action: 'goto:discussion_rooms' }],
         [{ label: '🇸🇦 غرفة السعودية والإمارات', action: 'goto:discussion_rooms' }],
         [{ label: '🌱 غرفة المبتدئين', action: 'goto:discussion_rooms' }],
         [{ label: '🔙 رجوع', action: 'goto:social_trading' }],
@@ -1371,6 +1398,7 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
         [{ label: '🥇 Elite — $149/شهر', action: 'goto:payment_method' }],
         [{ label: '💎 Diamond — $349/شهر', action: 'goto:payment_method' }],
         [{ label: '💰 الأسعار السنوية — وفّر 40%', action: 'goto:annual_plans' }],
+        [{ label: '📊 قارن بين الخطط بالتفصيل', action: 'goto:why_subscribe' }],
         [{ label: '🎫 لدي كود خصم', action: 'goto:discount_code' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
@@ -1453,6 +1481,7 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
         [{ label: '🍎 Apple Pay', action: 'goto:payment_success' }],
         [{ label: 'G Google Pay', action: 'goto:payment_success' }],
         [{ label: '⭐ Telegram Stars', action: 'goto:payment_success' }],
+        [{ label: '🏦 تحويل بنكي — Wire Transfer', action: 'goto:payment_success' }],
         [{ label: '🔙 العودة لخطط الاشتراك', action: 'goto:subscription_plans' }],
       ]
     },
@@ -1521,7 +1550,8 @@ $2,415 | ▲ +0.8% | الاتجاه: **صاعد**
         [{ label: '💳 تغيير طريقة الدفع', action: 'goto:payment_method' }],
         [{ label: '⬆️ ترقية للـ Elite — خصم 20%', action: 'goto:subscription_plans' }],
         [{ label: '💰 تحويل لاشتراك سنوي — وفّر 40%', action: 'goto:annual_plans' }],
-        [{ label: '❌ إلغاء التجديد التلقائي', action: 'goto:subscription_plans' }],
+        [{ label: '📄 تحميل الفواتير السابقة', action: 'goto:export_data' }],
+        [{ label: '❌ إلغاء التجديد التلقائي', action: 'goto:cancel_auto_renewal' }],
         [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
       ]
     },
@@ -1679,7 +1709,8 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
 🔴 **أهم حدث الأسبوع!**`,
       buttons: [
         [{ label: '⬅️ الأسبوع السابق', action: 'goto:weekly_calendar' }, { label: '➡️ الأسبوع القادم', action: 'goto:weekly_calendar' }],
-        [{ label: '🔔 تنبيهات الأحداث الكبرى', action: 'goto:notification_settings' }],
+        [{ label: '🔔 تنبيهات الأحداث الكبرى فقط', action: 'goto:notification_settings' }],
+        [{ label: '🔔 تنبيهات بجميع الأحداث', action: 'goto:notification_settings' }],
         [{ label: '🔙 رجوع', action: 'goto:economic_calendar' }],
       ]
     },
@@ -1713,6 +1744,7 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
       buttons: [
         [{ label: '🔗 نسخ رابط الإحالة', action: 'copy_referral' }],
         [{ label: '📤 مشاركة عبر تيليجرام', action: 'goto:referral' }, { label: '📱 مشاركة عبر واتساب', action: 'goto:referral' }],
+        [{ label: '🐦 مشاركة عبر تويتر / X', action: 'goto:referral' }],
         [{ label: '💰 سحب الأرباح — $47.40', action: 'goto:referral_withdraw' }],
         [{ label: '📋 تفاصيل الإحالات', action: 'goto:referral_details' }],
       ]
@@ -1767,6 +1799,7 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
         [{ label: '🐛 الإبلاغ عن مشكلة تقنية', action: 'goto:support' }],
         [{ label: '💡 اقتراح ميزة جديدة', action: 'goto:support' }],
         [{ label: '📖 دليل الاستخدام الشامل', action: 'goto:faq' }],
+        [{ label: '📢 قناة التحديثات والأخبار', action: 'goto:news' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -1881,10 +1914,13 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
         [{ label: '🔶 Binance — ربط API', action: 'goto:connect_binance' }],
         [{ label: '🟡 Bybit — ربط API', action: 'goto:connect_binance' }],
         [{ label: '🔵 OKX — ربط API', action: 'goto:connect_binance' }],
+        [{ label: '🟠 KuCoin — ربط API', action: 'goto:connect_binance' }],
         [{ label: '📊 MetaTrader 4 — ربط', action: 'goto:connect_binance' }],
         [{ label: '📊 MetaTrader 5 — ربط', action: 'goto:connect_binance' }],
         [{ label: '🔵 Coinbase Pro — ربط API', action: 'goto:connect_binance' }],
         [{ label: '📈 TradingView — ربط التنبيهات', action: 'goto:connect_binance' }],
+        [{ label: '🏦 Interactive Brokers — ربط', action: 'goto:connect_binance' }],
+        [{ label: '🔧 طلب دعم منصة أخرى', action: 'goto:support' }],
         [{ label: '🔙 رجوع للإعدادات', action: 'goto:settings' }],
       ]
     },
@@ -1927,6 +1963,8 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
       buttons: [
         [{ label: '⚙️ تفعيل التنفيذ التلقائي', action: 'goto:auto_trade_settings' }],
         [{ label: '✅ التنفيذ بضغطة مفعّل — بخير', action: 'goto:settings' }],
+        [{ label: '👁️ إظهار/إخفاء الرصيد', action: 'goto:connect_success' }],
+        [{ label: '🔧 إعدادات متقدمة للربط', action: 'goto:auto_trade_settings' }],
         [{ label: '❌ إلغاء ربط المنصة', action: 'goto:connect_platforms' }],
       ]
     },
@@ -1981,6 +2019,7 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
         [{ label: '📊 القائمة الكاملة', action: 'goto:competitions' }],
         [{ label: '🎯 التحديات الأسبوعية', action: 'goto:weekly_challenges' }],
         [{ label: '❓ قواعد المسابقة', action: 'goto:competitions' }],
+        [{ label: '💡 كيف أحسّن تصنيفي؟', action: 'goto:academy' }],
         [{ label: '🏠 رجوع للقائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -2033,7 +2072,7 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
       buttons: [
         [{ label: '🚀 اشترك الآن — خصم 40%!', action: 'goto:subscription_plans', color: 'green' }],
         [{ label: '📋 عرض الخطط', action: 'goto:subscription_plans' }],
-        [{ label: '❓ لماذا أشترك؟ أقنعني', action: 'goto:limited_plan' }],
+        [{ label: '❓ لماذا أشترك؟ أقنعني', action: 'goto:why_subscribe' }],
         [{ label: '😞 لا شكراً — البقاء على خطة محدودة', action: 'goto:limited_plan' }],
       ]
     },
@@ -2133,6 +2172,7 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
       buttons: [
         [{ label: '🚀 اشترك الآن — جرب بدون مخاطرة!', action: 'goto:subscription_plans', color: 'green' }],
         [{ label: '📋 مقارنة الخطط والأسعار', action: 'goto:subscription_plans' }],
+        [{ label: '💬 لدي استفسار آخر', action: 'goto:ai_assistant' }],
         [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
       ]
     },
@@ -2256,7 +2296,7 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
         [{ label: '✅ التجديد التلقائي مفعّل — بخير', action: 'goto:main_menu' }],
         [{ label: '⬆️ ترقية لـ Elite — خصم 20%', action: 'goto:subscription_plans' }],
         [{ label: '💰 تحويل لاشتراك سنوي — وفّر 40%', action: 'goto:annual_plans' }],
-        [{ label: '❌ إلغاء التجديد التلقائي', action: 'goto:cancel_subscription_confirm' }],
+        [{ label: '❌ إلغاء التجديد التلقائي', action: 'goto:cancel_auto_renewal' }],
       ]
     },
 
@@ -2370,6 +2410,199 @@ ${new Date().toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', mon
       buttons: [
         [{ label: '💬 تواصل مع الدعم', action: 'goto:support' }],
         [{ label: '📧 إرسال بريد إلكتروني للدعم', action: 'goto:support' }],
+      ]
+    },
+
+    language_search: {
+      id: 'language_search',
+      text: `🔍 **بحث عن لغة**
+
+اكتب اسم اللغة التي تبحث عنها:
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**نتائج البحث:**
+
+🇸🇦 **العربية** — Arabic
+🇬🇧 **الإنجليزية** — English
+🇫🇷 **الفرنسية** — Français
+🇩🇪 **الألمانية** — Deutsch
+🇪🇸 **الإسبانية** — Español
+🇵🇹 **البرتغالية** — Português
+🇷🇺 **الروسية** — Русский
+🇨🇳 **الصينية** — 中文
+🇯🇵 **اليابانية** — 日本語
+🇰🇷 **الكورية** — 한국어`,
+      buttons: [
+        [{ label: '🇸🇦 العربية', action: 'set_lang:العربية' }, { label: '🇬🇧 English', action: 'set_lang:English' }],
+        [{ label: '🇫🇷 Français', action: 'set_lang:Français' }, { label: '🇩🇪 Deutsch', action: 'set_lang:Deutsch' }],
+        [{ label: '🇪🇸 Español', action: 'set_lang:Español' }, { label: '🇵🇹 Português', action: 'set_lang:Português' }],
+        [{ label: '🔙 رجوع لقائمة اللغات', action: 'goto:language' }],
+      ]
+    },
+
+    timezone_custom: {
+      id: 'timezone_custom',
+      text: `🕐 **إدخال منطقة زمنية مخصصة**
+
+اكتب فارق توقيتك عن GMT:
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**أمثلة:**
+• GMT+0 — لندن (بدون تغيير)
+• GMT+1 — باريس، برلين
+• GMT+2 — القاهرة، أثينا
+• GMT+3 — الرياض، موسكو
+• GMT+4 — دبي، أبوظبي
+• GMT+5:30 — مومباي
+• GMT+8 — بكين، سنغافورة
+• GMT-5 — نيويورك
+• GMT-8 — لوس أنجلوس
+
+اختر منطقتك الزمنية:`,
+      buttons: [
+        [{ label: 'GMT+0 — لندن', action: 'set_tz:GMT+0' }, { label: 'GMT+1 — باريس', action: 'set_tz:GMT+1' }],
+        [{ label: 'GMT+2 — القاهرة', action: 'set_tz:GMT+2' }, { label: 'GMT+4 — دبي', action: 'set_tz:GMT+4' }],
+        [{ label: 'GMT+5:30 — مومباي', action: 'set_tz:GMT+5:30' }, { label: 'GMT+8 — بكين', action: 'set_tz:GMT+8' }],
+        [{ label: 'GMT-5 — نيويورك', action: 'set_tz:GMT-5' }, { label: 'GMT-8 — لوس أنجلوس', action: 'set_tz:GMT-8' }],
+        [{ label: '🔙 رجوع', action: 'goto:step4_timezone' }],
+      ]
+    },
+
+    review_edit: {
+      id: 'review_edit',
+      text: `✏️ **تعديل الإعدادات**
+
+ماذا تريد تعديله؟`,
+      buttons: [
+        [{ label: '💼 تغيير مستوى الخبرة', action: 'goto:step1_experience' }],
+        [{ label: '📊 تغيير الأسواق المفضلة', action: 'goto:step2_markets' }],
+        [{ label: '📈 تغيير أسلوب التداول', action: 'goto:step3_style' }],
+        [{ label: '🕐 تغيير المنطقة الزمنية', action: 'goto:step4_timezone' }],
+        [{ label: '🔙 رجوع لمراجعة الإعدادات', action: 'goto:review_settings' }],
+      ]
+    },
+
+    trial_24h: {
+      id: 'trial_24h',
+      text: `⏰ **تذكير — باقي 24 ساعة على انتهاء التجربة!**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**ما أنجزته خلال 24 ساعة الأولى:**
+• إشارات استلمتها: **9**
+• الإشارات الناجحة: **7** (77.8%)
+• أفضل إشارة: BTC **+5.26%** 🏆
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🎁 **لا تفوّت هذه اللحظة!**
+اشترك الآن واحصل على **خصم 25%** خاص بالتجارب التي تنتهي قريباً.
+
+⏰ باقي على انتهاء تجربتك: **24 ساعة**`,
+      buttons: [
+        [{ label: '🚀 اشترك الآن — خصم 25%!', action: 'goto:subscription_plans', color: 'green' }],
+        [{ label: '📋 عرض الخطط', action: 'goto:subscription_plans' }],
+        [{ label: '⏭️ تذكيرني لاحقاً', action: 'goto:main_menu' }],
+      ]
+    },
+
+    trial_6h: {
+      id: 'trial_6h',
+      text: `🚨 **تحذير — باقي 6 ساعات فقط على انتهاء التجربة!**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**ملخص إنجازاتك في التجربة:**
+• إشارات استلمتها: **14**
+• الإشارات الناجحة: **11** (78.5%)
+• الأداء التقديري: **+18.7%** 🚀
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ بعد 6 ساعات ستفقد الوصول لجميع الميزات!
+
+🔥 **عرض أخير — اشترك الآن وخصم 30%!**
+الكود التلقائي: **LAST30**`,
+      buttons: [
+        [{ label: '🔥 اشترك الآن — خصم 30%!', action: 'goto:subscription_plans', color: 'green' }],
+        [{ label: '📋 عرض الخطط بالتفصيل', action: 'goto:subscription_plans' }],
+        [{ label: '❓ لماذا أشترك؟', action: 'goto:why_subscribe' }],
+        [{ label: '⏭️ سأقرر لاحقاً', action: 'goto:main_menu' }],
+      ]
+    },
+
+    trade_filter: {
+      id: 'trade_filter',
+      text: `🔍 **بحث وفلترة الصفقات**
+
+فلتر سجل الصفقات حسب:
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**الفلتر حسب النتيجة:**
+• ✅ الصفقات الرابحة فقط
+• ❌ الصفقات الخاسرة فقط
+• ⏳ الصفقات الجارية فقط
+
+**الفلتر حسب السوق:**
+• 🔵 الكريبتو | 🟢 الفوركس | 🟡 الأسهم
+• 🟤 الذهب والسلع | ⚪ المؤشرات
+
+**الفلتر حسب الفترة:**
+• اليوم | الأسبوع | الشهر | 3 أشهر | كل الوقت`,
+      buttons: [
+        [{ label: '✅ الرابحة فقط', action: 'goto:trade_history' }, { label: '❌ الخاسرة فقط', action: 'goto:trade_history' }],
+        [{ label: '🔵 كريبتو', action: 'goto:trade_history' }, { label: '🟢 فوركس', action: 'goto:trade_history' }, { label: '🟡 أسهم', action: 'goto:trade_history' }],
+        [{ label: '📅 هذا الأسبوع', action: 'goto:trade_history' }, { label: '📆 هذا الشهر', action: 'goto:trade_history' }],
+        [{ label: '📄 تصدير النتائج CSV', action: 'goto:export_data' }],
+        [{ label: '🔙 رجوع لسجل الصفقات', action: 'goto:trade_history' }],
+      ]
+    },
+
+    signal_entered: {
+      id: 'signal_entered',
+      text: `✅ **تم تسجيل دخولك في الصفقة!**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 **سنتابع معك كل خطوة:**
+• سنُرسل لك تنبيهاً عند تحقق كل هدف
+• سنُرسل تنبيهاً إذا اقترب السعر من وقف الخسارة
+• ستصلك توصية بإدارة الصفقة عند الهدف الأول
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **تذكير مهم:**
+• الهدف الأول: اسحب 25% من الربح وأمّن الصفقة
+• عند الهدف الثاني: انقل وقف الخسارة فوق الدخول
+• لا تضع كل مالك في صفقة واحدة
+
+**نسبة التطبيق من المشتركين:** 68% ✅`,
+      buttons: [
+        [{ label: '🧮 حاسبة حجم الصفقة المناسب', action: 'goto:position_calc' }],
+        [{ label: '📊 عرض الصفقة كاملة', action: 'goto:signal_btc' }],
+        [{ label: '📡 إشارات أخرى', action: 'goto:signals_live' }],
+        [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
+      ]
+    },
+
+    cancel_auto_renewal: {
+      id: 'cancel_auto_renewal',
+      text: `⚠️ **تأكيد إلغاء التجديد التلقائي**
+
+هل أنت متأكد أنك تريد إلغاء التجديد التلقائي؟
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**إذا ألغيت:**
+• ستبقى مشتركاً حتى تاريخ الانتهاء الحالي (بعد 18 يوماً)
+• لن يتجدد اشتراكك تلقائياً بعد ذلك
+• ستتحول لخطة مجانية محدودة تلقائياً
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+**قبل المغادرة، هل تعلم أنك تستطيع:**
+• ⏸️ تجميد اشتراكك لمدة شهر بدلاً من الإلغاء
+• ⬇️ التحويل لخطة أرخص (Starter — $29 فقط)
+• 🎫 الحصول على كود خصم للتجديد
+
+💡 *معظم من يلغون يعودون خلال أسبوعين!*`,
+      buttons: [
+        [{ label: '✅ نعم، ألغِ التجديد التلقائي', action: 'goto:manage_subscription', color: 'red' }],
+        [{ label: '❌ لا، أبقِ التجديد مفعّلاً', action: 'goto:manage_subscription', color: 'green' }],
+        [{ label: '⏸️ تجميد الاشتراك شهراً بدلاً من ذلك', action: 'goto:manage_subscription' }],
+        [{ label: '⬇️ التحويل لخطة Starter الأرخص', action: 'goto:subscription_plans' }],
       ]
     },
 

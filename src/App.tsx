@@ -145,6 +145,45 @@ export default function App() {
       setUserState(updated);
       navigate('step4_selected', updated);
     }
+    else if (action.startsWith('filter_signals:')) {
+      const filter = action.replace('filter_signals:', '');
+      const filterMap: Record<string, string> = {
+        crypto: 'الكريبتو',
+        forex: 'الفوركس',
+        stocks: 'الأسهم',
+        gold: 'الذهب والسلع',
+        indices: 'المؤشرات',
+        all: 'الكل',
+      };
+      const filterName = filterMap[filter] || filter;
+      setTimeout(() => {
+        const msgId = `filter-${Date.now()}`;
+        setMessages(prev => [...prev, {
+          id: msgId,
+          type: 'bot',
+          text: `🔍 **فلترة الإشارات — ${filterName}**
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+${filter === 'crypto' ? `🔵 **BTC/USDT** — شراء LONG — جودة **94%** ⭐⭐⭐⭐⭐\n🔵 **ETH/USDT** — شراء LONG — جودة **87%** ⭐⭐⭐⭐\n🔵 **SOL/USDT** — شراء LONG — جودة **81%** ⭐⭐⭐⭐` :
+           filter === 'forex' ? `🟢 **EUR/USD** — بيع SHORT — جودة **82%** ⭐⭐⭐⭐\n🟢 **GBP/USD** — بيع SHORT — جودة **79%** ⭐⭐⭐⭐\n🟢 **USD/JPY** — شراء LONG — جودة **76%** ⭐⭐⭐` :
+           filter === 'stocks' ? `🟡 **AAPL** — شراء سوينج — جودة **88%** ⭐⭐⭐⭐\n🟡 **NVDA** — شراء — جودة **85%** ⭐⭐⭐⭐\n🟡 **MSFT** — شراء — جودة **83%** ⭐⭐⭐⭐` :
+           filter === 'gold' ? `🟤 **XAU/USD** — شراء LONG — جودة **91%** ⭐⭐⭐⭐⭐\n🟤 **WTI Oil** — شراء — جودة **78%** ⭐⭐⭐` :
+           filter === 'indices' ? `⚪ **S&P 500** — شراء — جودة **77%** ⭐⭐⭐\n⚪ **NASDAQ** — شراء — جودة **75%** ⭐⭐⭐` :
+           `جميع الإشارات النشطة اليوم: **7 إشارات**`}
+
+الإجمالي: نجاح **71.4%** اليوم`,
+          buttons: [
+            [{ label: '🔵 كريبتو', action: 'filter_signals:crypto' }, { label: '🟢 فوركس', action: 'filter_signals:forex' }, { label: '🟡 أسهم', action: 'filter_signals:stocks' }],
+            [{ label: '🟤 ذهب', action: 'filter_signals:gold' }, { label: '⚪ مؤشرات', action: 'filter_signals:indices' }, { label: '📋 الكل', action: 'filter_signals:all' }],
+            [{ label: '📊 BTC — التفاصيل الكاملة', action: 'goto:signal_btc' }],
+            [{ label: '🏠 القائمة الرئيسية', action: 'goto:main_menu' }],
+          ],
+          timestamp: new Date(),
+        }]);
+        setActiveMessageId(msgId);
+        scrollToBottom();
+      }, TYPING_DELAY);
+    }
     else if (action === 'copy_referral') {
       navigator.clipboard?.writeText('https://t.me/ApexTradingBot?start=ref_trader_apex');
       addUserMessage('✅ تم نسخ رابط الإحالة!');
